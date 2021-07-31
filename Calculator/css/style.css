@@ -47,7 +47,7 @@ hr {
 }
 
 .icon {
-	--icon-name: "test";
+	/*--icon-name: "test";*/
 	margin: 10px 0;
 	position: relative;
 	transition: outline .2s;
@@ -114,6 +114,7 @@ div.calculator-wrap {
 		border-top-right-radius: 5px;
 		position: relative;
 		z-index: 1;
+		
 	}
 
 	div.row {
@@ -185,7 +186,7 @@ a#maxmize:hover:after {
 	content: "";
 	height: 2px;
 	width: 50%;	
-	background-color: #101010;
+	background-color: #fff;
 	opacity: 0.8;
 }
 
