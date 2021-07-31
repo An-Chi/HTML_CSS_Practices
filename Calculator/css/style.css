@@ -1,0 +1,157 @@
+*, html {
+	box-sizing: border-box;
+	/*outline: 2px solid lightcoral;*/
+}
+
+
+.container {
+	width: 100%;
+	margin: 15px auto;
+
+}
+
+div.calculator-panel-wrap {
+	margin: 0 auto;
+	border: 2px solid #101010;
+	border-radius: 10px;
+	width: 315px;
+	height: 435px;
+	background-color: #5F605F;
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+	box-shadow: 2px 2px 12px 3px rgba(0, 0, 0, 0.2);	
+	display: flex;
+	flex-direction: column;
+}
+
+div.display-number-panel {
+	display: flex;
+	flex-direction: column;
+}
+
+.row {
+	height: 100%;
+	display: flex;
+}
+
+button {
+	width: 25%;
+	font-size: 24px;
+	background-color: #898A89;
+	/*border: 1px groove #969697;*/
+	color: #fff;
+}
+
+button#equal {
+	border-bottom-right-radius: 10px 10px;
+}
+
+button#zero {
+	width: 50%;
+	text-align: left;
+	padding-left: 30px;
+	border-bottom-left-radius: 10px 10px;
+}
+
+button.btn-calculate {
+	background-color: #E5A13B;
+}
+
+.display-area {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	color: #fff;
+	text-align: right;
+	flex-grow: 1;
+	padding: 10px;
+
+
+}
+.display-area span.display-number {
+	display: block;
+	font-size: 50px;
+}
+
+.btn-control {
+	/*outline: 1px solid orange;*/
+
+}
+
+.btn-control a {
+	display: inline-block;
+	font-weight: bold;
+	width: 15px;
+	height: 15px;
+	font-size: 8px;
+	margin: 5px;
+	border-radius: 50%;
+	text-decoration: none;
+	text-align: center;
+	position: relative;
+}
+
+a#close {
+	background-color: #DA645A;
+}
+a#minimize {
+	background-color: #E1C04C;
+}
+a#maxmize {
+	background-color: #76BF47;
+}
+
+
+a#close:hover:before,
+a#close:hover:after ,
+a#minimize:hover:before,
+a#maxmize:hover:before {
+	position: absolute;
+	top: 50%;
+	left: 25%;
+
+}
+
+a#close:hover:before,
+a#close:hover:after {
+	content: "";
+	height: 1px;
+	width: 50%;	
+	background-color: #101010;
+	opacity: 0.7;
+}
+
+a#close:hover:before {
+	transform: rotate(45deg);
+}
+a#close:hover:after {
+	transform: rotate(135deg);
+}
+
+a#minimize:hover:before {
+	content: "";
+	height: 2px;
+	width: 50%;	
+	background-color: #000;
+
+}
+
+a#maxmize:hover:before {
+	content: "+";
+}
+
+
+
+
+.btn-group-panel {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+
+
+
+
+
+
