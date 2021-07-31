@@ -1,18 +1,3 @@
-/*
-
-  1. div#displayResult set zero as default value
-  2. div#displayResult displays button value when number button has been clicked
-  3. div#displayResult concatenate clicked value as a string
-  4. div#displayResult reset to zero when the user clicked AC Button
-  5. 想法 | 但還沒解決 TODO WIP
-      # 1 取得 displayResult.innerHTML 的文字總寬度去比對本身div容器的寬度，
-         想使用 scrollWidth > clientWidth，試試看，可是 div 本身沒有scrollWidth
-         若設定了 overflow:scroll 就可以取得 scrollWidth. 但是會改變元素本身外觀。
-      # 2 另外做一個跟 #displayResult 本身一樣樣式的元素，但是會改變元素本身外觀。  
-      # 3 按別的數字，後面都按1 也可以到26個字 但是會壓到div的 padding
-          + 用 Array.prototype.includes() 
-*/
-
 document.addEventListener("DOMContentLoaded", () => {
   // 1.
   let btnGroups = document.querySelector("#buttonGroup").querySelectorAll('button');
