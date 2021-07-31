@@ -1,100 +1,167 @@
 *, html {
 	box-sizing: border-box;
+	font-family: 'Nanum Gothic', sans-serif;
 	/*outline: 2px solid lightcoral;*/
 }
 
-
-.container {
-	width: 100%;
-	margin: 15px auto;
+html, body {
+	overflow: hidden;
 
 }
 
-div.calculator-panel-wrap {
+body {
+	background-image:url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80") ;
+	/*background-image:url("../images/nasa-Q1p7bh3SHj8-unsplash.jpg") ;*/
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*
+-------------------------*/
+.container {
+/*	width: 100%;
+	height: 90%;*/
+	margin: 15px auto;
+	aspect-ratio: 16/8;
+	position: relative;
+}
+
+
+/* Dock
+-----------------------------*/
+.dock {
+	position: absolute;
+	width: 60px;
+	top: 25%;
+	right: 0;
+	background-color:  rgba(91, 95, 112, 0.8);
+	display: flex;
+	/*flex-direction: column;*/
+	justify-content: center;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+hr {
+	border-color: #000;
+}
+
+.icon {
+	margin: 10px 0;
+	position: relative;
+	transition: outline .2s;
+
+}
+
+.icon:before {
+	content: "";
+	width: 3px;
+	height: 3px;
+	position: absolute;
+	top: 50%;
+	right: -15%;
+	background-color: #000;
+}
+
+.icon img {
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+
+}
+
+
+.icon:hover {
+	outline: 1px solid #fff;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	outline: 1px dotted pink;
+	/*visibility: hidden;*/
+	width: 120px;
+	position: absolute;
+	top: 0%;
+	left: -50px;
+	background-color: #fff;
+}
+
+
+/*	計算機 Calculator Container
+----------------------------*/
+div.calculator-wrap {
 	margin: 0 auto;
-	border: 2px solid #101010;
-	border-radius: 10px;
-	width: 315px;
-	height: 435px;
-	background-color: #5F605F;
+	border-radius: 5px;
+	width: 235px;
+	height: 321px;
 	/* offset-x | offset-y | blur-radius | spread-radius | color */
 	box-shadow: 2px 2px 12px 3px rgba(0, 0, 0, 0.2);	
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
+
+/* 計算機 顯示數字 0123456789 面板
+	bgc: #454545;
+-------------------------------*/
 
 div.display-number-panel {
 	display: flex;
 	flex-direction: column;
+	cursor: default;
+	background-color: rgba(69, 69, 69, 0.8); 
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	position: relative;
+	z-index: 1;
 }
 
-.row {
+div.row {
 	height: 100%;
 	display: flex;
 }
 
+/* Button Style in common
+-----------------------------*/
 button {
 	width: 25%;
-	font-size: 24px;
+	font-size: 22px;
 	background-color: #898A89;
-	/*border: 1px groove #969697;*/
+	border: thin groove #969697;
 	color: #fff;
 }
-
-button#equal {
-	border-bottom-right-radius: 10px 10px;
+button:active {
+	background-color: #969697;
 }
 
-button#zero {
-	width: 50%;
-	text-align: left;
-	padding-left: 30px;
-	border-bottom-left-radius: 10px 10px;
-}
 
-button.btn-calculate {
-	background-color: #E5A13B;
-}
-
-.display-area {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	color: #fff;
-	text-align: right;
-	flex-grow: 1;
-	padding: 10px;
-
-
-}
-.display-area span.display-number {
-	display: block;
-	font-size: 50px;
-}
-
+/* X close | － minimize | ＋ maxmize
+---------------------------------------*/
 .btn-control {
-	/*outline: 1px solid orange;*/
-
+	padding-left: 8px;
+	position: relative;
 }
 
 .btn-control a {
+	color: #FFF;
 	display: inline-block;
 	font-weight: bold;
-	width: 15px;
-	height: 15px;
+	width: 13px;
+	height: 13px;
 	font-size: 8px;
-	margin: 5px;
+	margin: 5px 0 0 1px;
 	border-radius: 50%;
 	text-decoration: none;
 	text-align: center;
-	position: relative;
+	z-index: 1000;
 }
 
 a#close {
 	background-color: #DA645A;
 }
 a#minimize {
-	background-color: #E1C04C;
+	background-color: #F7BF3D;
 }
 a#maxmize {
 	background-color: #76BF47;
@@ -104,20 +171,23 @@ a#maxmize {
 a#close:hover:before,
 a#close:hover:after ,
 a#minimize:hover:before,
-a#maxmize:hover:before {
+a#maxmize:hover:before,
+a#maxmize:hover:after {
 	position: absolute;
 	top: 50%;
 	left: 25%;
-
 }
 
 a#close:hover:before,
-a#close:hover:after {
+a#close:hover:after,
+a#minimize:hover:before,
+a#maxmize:hover:before,
+a#maxmize:hover:after {
 	content: "";
-	height: 1px;
+	height: 2px;
 	width: 50%;	
 	background-color: #101010;
-	opacity: 0.7;
+	opacity: 0.8;
 }
 
 a#close:hover:before {
@@ -126,27 +196,91 @@ a#close:hover:before {
 a#close:hover:after {
 	transform: rotate(135deg);
 }
+a#maxmize:hover:after {
+	transform: rotate(90deg);
+}
 
-a#minimize:hover:before {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button#equal {
+	border-bottom-right-radius: 5px 5px;
+}
+
+button.btn-calculate {
+	background-color: #DF913C;
+	position: relative;
+}
+
+button.btn-calculate:active {
+	color: #000;
+}
+
+button.btn-calculate:active:before {
 	content: "";
-	height: 2px;
-	width: 50%;	
-	background-color: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: #969697;
+	opacity: 0.7;
+	
+} 
+
+button#zero {
+	width: 50%;
+	text-align: left;
+	border-bottom-left-radius: 5px 5px;
+	padding: 0 20px;
+}
+
+
+.display-area {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	color: #fff;
+	text-align: right;
+	flex-grow: 1;
+	padding: 0 10px;
+	position: relative;
+	z-index: 1000;
+
+
+
+}
+.display-area span.display-number {
+	display: block;
+	font-size: 42px;
+	z-index: 1000;
+	opacity: 1;
 
 }
 
-a#maxmize:hover:before {
-	content: "+";
-}
 
 
 
+/*	按鍵 Button Group
+-------------------------*/
 
 .btn-group-panel {
 	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	opacity: 1;
 }
 
 

@@ -5,14 +5,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>MAC OS | Calculator</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script type="text/javascript" src="./js/scripts.js"></script>
 </head>
 <body>
 	
-	<div class="container">
-		<div class="calculator-panel-wrap">
+	<div class="container ui-widget-content">
+		<div class="dock">
+			<div class="icon-set">
+				<div class="icon">
+					<span class="tooltip"></span>
+					<img src="./images/87865_chrome_icon.png" alt="Google Chrome">
+				</div>
+				<div class="icon">
+					<span class="tooltip"></span>
+					<img src="./images/Finder-icon.png" alt="Finder">
+				</div>
+				<div class="icon">
+					<span class="tooltip"></span>
+					<img src="./images/Launchpad-icon.png" alt="Launchpad">
+				</div>
+				<div class="icon icon-calculator">
+					<span class="tooltip"></span>
+					<img src="./images/Calculator-icon2.png" alt="Calculator">
+				</div>
+				<div class="icon">
+					<span class="tooltip"></span>
+					<img src="./images/discord-icon.png" alt="Discord">
+				</div>
+				<div class="icon">
+					<span class="tooltip"></span>
+					<img src="./images/sublime-text-icon.png" alt="Sublime Text">
+				</div>
+				<div class="icon">
+					<span class="tooltip"></span>
+					<img src="./images/terminal-icon.png" alt="Terminal">
+				</div>
+				<hr>
+				<div class="icon">
+					<span class="tooltip"></span>
+					<img src="./images/Trash-Empty-icon.png" alt="Trash">
+				</div>
+			</div>
+		</div>
+		<div class="calculator-wrap" id="draggable">
 			<div class="display-number-panel">
 				<div class=" btn-control">
 					<a href="#" id="close" class=""></a>
@@ -21,7 +61,7 @@
 				</div>
 				<div class="row">
 					<div class="display-area">
-						<span class="display-number" id="displayNumber">0</span>
+						<span class="display-number" id="displayNumber">12345678</span>
 					</div>
 				</div>
 			</div>
