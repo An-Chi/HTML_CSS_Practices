@@ -7,7 +7,8 @@
 >可以用 HTML /CSS 處理的
 
 1. 先取得計算機的顏色分類
-    ![計算機使用顏色](./images/calculator-color-plate.png)
+    + ![計算機使用顏色](./images/calculator-color-plate.png)
+    
 2. 計算機長寬比例 315px / 435px
 3. 
 
