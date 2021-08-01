@@ -1,7 +1,7 @@
 *, html {
 	box-sizing: border-box;
 	font-family: 'Nanum Gothic', sans-serif;
-	/*outline: 2px solid lightcoral;*/
+	/*outline: 1px solid lightcoral;*/
 }
 
 html, body {
@@ -114,7 +114,7 @@ div.calculator-wrap {
 		border-top-right-radius: 5px;
 		position: relative;
 		z-index: 1;
-		
+
 	}
 
 	div.row {
@@ -144,7 +144,7 @@ button:active {
 }
 
 .btn-control a {
-	color: #FFF;
+	position: relative;
 	display: inline-block;
 	font-weight: bold;
 	width: 13px;
@@ -154,7 +154,8 @@ button:active {
 	border-radius: 50%;
 	text-decoration: none;
 	text-align: center;
-	z-index: 1000;
+	/*z-index: 1000;*/
+	/*outline: 1px solid lightblue;*/
 }
 
 a#close {
@@ -167,42 +168,46 @@ a#maxmize {
 	background-color: #76BF47;
 }
 
+span.control-btn-symbol {
+	display: inline-block;
+	width: 50%;
+	outline: 1px solid lightcyan;
+}
 
-a#close:hover:before,
-a#close:hover:after ,
-a#minimize:hover:before,
-a#maxmize:hover:before,
-a#maxmize:hover:after {
+
+span.control-btn-symbol:before {
 	position: absolute;
-	top: 50%;
-	left: 25%;
-}
-
-a#close:hover:before,
-a#close:hover:after,
-a#minimize:hover:before,
-a#maxmize:hover:before,
-a#maxmize:hover:after {
 	content: "";
-	height: 2px;
-	width: 50%;	
-	background-color: #fff;
-	opacity: 0.8;
+	bottom: 0px;
+	right: 0px;
+	width: 100%;	
+	height: 2px;	
+	background-color: #000;
 }
 
-a#close:hover:before {
+span.control-btn-symbol:after {
+	position: absolute;
+	top: 40%;
+	left: 20%;
+	width: 60%;	
+	height: 2px;
+	background-color: #000;
+	/*display: none;*/
+}
+
+a#close span {
 	transform: rotate(45deg);
 }
-a#close:hover:after {
-	transform: rotate(135deg);
+a#close span:before {
+	transform: rotate(90deg);
 }
-a#maxmize:hover:after {
+a#maxmize span {
 	transform: rotate(90deg);
 }
 
-
-
-
+a#maxmize span:before {
+	transform: rotate(90deg);
+}
 
 
 
