@@ -5,26 +5,12 @@ document.addEventListener("DOMContentLoaded",function(){
 	 *	畫面
 	 *--------------*/
 
-
-
 	/* 先用jQuery的 draggable() 來達成移動計算機
 	vanilla JS 尚未了解怎麼做，稍微查過 Canvas 可以做到
 	-----------------------------------------------*/
 	$(function() {
 		$( "#draggable" ).draggable();
 	} );
-
-	/* dock tooltip
-	------------------------------------------------*/
-	// const dockIcon = document.querySelector(".icon-set");
-	// // console.log(dockIcon);
-	// dockIcon.addEventListener("click", function(event){
-	// 	console.log(event.target); // img
-	// 	// console.log(event.target.alt);
-	// 	// console.log(event.currentTarget);
-	// 	console.log(event.target.parentNode);
-	// 	//
-	// });
 
 
 	/* dock 右邊圖示區域 先只有寫計算機
@@ -47,10 +33,10 @@ document.addEventListener("DOMContentLoaded",function(){
 	const controlButton = document.querySelector(".btn-control");
 
 	controlButton.addEventListener("click",function(event){
-		console.log(event.target);
+		// console.log(event.target);
 		let id = event.target["id"];
 		if(id){
-			console.log(id);
+			// console.log(id);
 			switch(id){
 				case "close":
 				document.querySelector(".calculator-wrap").style.visibility="hidden";
@@ -70,21 +56,75 @@ document.addEventListener("DOMContentLoaded",function(){
 
 	});
 
+
+
+
+
 	/*	按鈕初始化
 	----------------------------------------*/
 
 
+
+	let Calculator = document.querySelector("#draggable");
+	// console.log(Calculator);
+	// console.log(document.hasFocus());
 	let displayNumPanel = document.querySelector("#displayNumber");
 	let limitedDigits = 8; // 目前先處理位數
-	console.log(displayNumPanel);
+	// console.log(displayNumPanel);
 	displayNumPanel.textContent = 0;
 
+	// Focus 事件
+	// function getFocus(){
+	// 	document.getElementById("draggable").focus();
+	// }
+	// window.addEventListener("focus", getFocus);
+	// console.log(document.hasFocus());
 
-	// Keypress 事件
-	document.querySelector("demo").addEventListener("keypress", myFunction);
+	// if(document.hasFocus()){
+	// 	alert(1);
+
+	// }
+
+
+	/*	button click event
+	----------------------------------------------------*/
+	function getButton(){
+		const row = document.querySelectorAll(".row");
+		row.forEach(function(event,index){
+			// console.log(event);
+			// console.log(row[index]);
+			row[index].addEventListener("click",function(e){
+				// get class name
+				let buttonGroup = e.target.getAttribute("class");
+				console.log(`${buttonGroup} | ${e.target.value}`);
+			});
+
+		});
+
+	}
+
+	console.log(getButton()); // should be undefined
 
 
 
 
 
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}); // END of Document Ready

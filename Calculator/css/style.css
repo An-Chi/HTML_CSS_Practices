@@ -52,7 +52,7 @@ hr {
 	position: relative;
 	transition: outline .2s;
 	/*outline: 1px solid orange;*/
-	
+
 }
 
 
@@ -103,6 +103,7 @@ div.calculator-wrap {
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	/*outline: 1px solid pink;*/
 }
 
 /* 計算機 顯示數字 0123456789 面板
@@ -238,7 +239,7 @@ button.btn-calculate:active:before {
 	
 } 
 
-button#zero {
+button#btn-zero {
 	width: 50%;
 	text-align: left;
 	border-bottom-left-radius: 5px 5px;
