@@ -1,4 +1,32 @@
 document.addEventListener("DOMContentLoaded",function(){
+	/*	按鈕初始化
+	----------------------------------------*/
+
+	let objCalculator = new StandardCalculator();
+
+	let calculator = document.querySelector("#draggable");
+	// console.log(calculator);
+	// console.log(document.hasFocus());
+	let displayNumPanel = document.querySelector("#displayNumber");
+	const LimitedDigits = 8; // 目前先處理位數 TODO
+	displayNumPanel.textContent = 0;
+	console.log(displayNumPanel.textContent);
+	// objCalculator.calculate().toPrecision(LimitedDigits);
+
+	// Focus 事件
+	// function getFocus(){
+	// 	document.getElementById("draggable").focus();
+	// }
+	// window.addEventListener("focus", getFocus);
+	// console.log(document.hasFocus());
+
+	// if(document.hasFocus()){
+	// 	alert(1);
+
+	// }
+
+	
+
 
 	/*--------------
 	 *
@@ -22,7 +50,7 @@ document.addEventListener("DOMContentLoaded",function(){
 		if(id === "icon_calculator"){
 			document.querySelector(".calculator-wrap").style.visibility="visible";
 			// TODO 這裡要把計算機的值 reset
-
+			displayNumPanel.textContent = 0;
 		}
 
 	});
@@ -42,7 +70,7 @@ document.addEventListener("DOMContentLoaded",function(){
 				document.querySelector(".calculator-wrap").style.visibility="hidden";
 				alert(`${id} 計算機先用隱藏代替關閉，要開啟請按右邊計算機圖示或重新整理`);
 				// 這裡要把計算機的值 reset
-
+				displayNumPanel.textContent = 0;
 				break;
 				case "minimize":
 				alert(`${id} 計算機縮小，還沒做`);
@@ -60,30 +88,6 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
 
-	/*	按鈕初始化
-	----------------------------------------*/
-
-
-
-	let Calculator = document.querySelector("#draggable");
-	// console.log(Calculator);
-	// console.log(document.hasFocus());
-	let displayNumPanel = document.querySelector("#displayNumber");
-	let limitedDigits = 8; // 目前先處理位數
-	// console.log(displayNumPanel);
-	displayNumPanel.textContent = 0;
-
-	// Focus 事件
-	// function getFocus(){
-	// 	document.getElementById("draggable").focus();
-	// }
-	// window.addEventListener("focus", getFocus);
-	// console.log(document.hasFocus());
-
-	// if(document.hasFocus()){
-	// 	alert(1);
-
-	// }
 
 
 	/*	button click event
@@ -97,26 +101,31 @@ document.addEventListener("DOMContentLoaded",function(){
 				// get class name
 				let buttonGroup = e.target.getAttribute("class");
 				console.log(`${buttonGroup} | ${e.target.value}`);
+
+				if(buttonGroup === "btn-num"){
+					let number = e.target.value;
+					displayNumPanel.textContent += number;	
+					return displayNumPanel.textContent;
+				}
+				
+				// TODO 修正 btn-clear-all , btn-clear
+				if(buttonGroup.includes("btn-clear-all")){
+					return displayNumPanel.textContent = 0;
+				}
+
+
+				
 			});
 
 		});
 
 	}
 
-	console.log(getButton()); // should be undefined
+	getButton();
 
 
 
-
-
-
-
-
-
-
-
-
-
+	
 
 
 

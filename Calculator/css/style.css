@@ -119,6 +119,7 @@ div.calculator-wrap {
 		border-top-right-radius: 5px;
 		position: relative;
 		z-index: 1;
+		overflow: hidden;
 
 	}
 
