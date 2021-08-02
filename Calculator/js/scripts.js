@@ -1,28 +1,28 @@
 document.addEventListener("DOMContentLoaded",function(){
 	/*	初始化
 	----------------------------------------*/
- 
-	let objCalculator = new StandardCalculator();
 
+	let objCalculator = new StandardCalculator();
+    let calculator = document.querySelector("#draggable");
 	const INPUT_MODE = 0; // 輸入模式
     const RESULT_MODE = 1; // 顯示模式
     const END_MODE = 2; // 結束模式
     let intDisplayMode = INPUT_MODE; // 預設輸入模式
-	console.log(`display mode: ${intDisplayMode}`);
+    console.log(`display mode: ${intDisplayMode}`);
+
+
+	const LimitedDigits = 8; // 目前先處理位數 TODO
+	let displayNumPanel = document.querySelector("#displayNumber");
+	displayNumPanel.textContent = 0;
+	let savedNumber = 0;
+	console.log(displayNumPanel.textContent);
+	// objCalculator.calculate().toPrecision(LimitedDigits);
+	const btnEqual = document.querySelector("#equal");
+	const btnAllClear = document.querySelector("#ac");
     let summary = 0;  //運算結果
     let operator ="";
     let nextNumber = 0;
 
-
-
-	let calculator = document.querySelector("#draggable");
-	let displayNumPanel = document.querySelector("#displayNumber");
-	const LimitedDigits = 8; // 目前先處理位數 TODO
-	displayNumPanel.textContent = 0;
-	console.log(displayNumPanel.textContent);
-	// objCalculator.calculate().toPrecision(LimitedDigits);
-
-	
 
 	/*--------------
 	 *
@@ -77,10 +77,14 @@ document.addEventListener("DOMContentLoaded",function(){
 				break;
 			}
 		}
-
 	});
 
+	function clearAll(){
+		displayNumPanel.textContent = 0;
+	}
+	function clearDisplayNumber(){
 
+	}
 
 	// Focus 事件
 	// function getFocus(){
@@ -89,54 +93,75 @@ document.addEventListener("DOMContentLoaded",function(){
 
 	/*	button click event
 	----------------------------------------------------*/
-	function getButton(){
+	// function getButton(){
 		const row = document.querySelectorAll(".row");
 		row.forEach(function(event,index){
-			// console.log(event);
-			// console.log(row[index]);
 			row[index].addEventListener("click",function(e){
-				// get class name
+
 				let buttonGroup = e.target.getAttribute("class");
 				console.log(`${buttonGroup} | ${e.target.value}`);
 
 				if(buttonGroup === "btn-num"){
 					let number = e.target.value;
-					displayNumPanel.textContent += number;	
+					let testnum = displayNumPanel.textContent.substring(0,1);
+					// alert(testnum);
+					if(displayNumPanel.textContent.substring(0,1) == 0){
+						displayNumPanel.textContent = "";
+					}
+					displayNumPanel.textContent = displayNumPanel.textContent.concat(number);
+
+
 					return displayNumPanel.textContent;
 				}
 				
-				// TODO 修正 btn-clear-all , btn-clear 先做AC 
+				// TODO 修正 btn-all-clear , btn-clear 先做AC 
 				// 點一次 C，按鈕會變更為 AC 會清除畫面上數字，但不會把已經儲存的值給刪掉
 				// 再點 AC 會把所有值清空 歸零
-				if(buttonGroup.includes("btn-clear-all")){
-					return displayNumPanel.textContent = 0;
+				if(buttonGroup.includes("btn-all-clear")){
+					return clearAll();
 				}
 
 			});
 
-		});
+		}); 
 
-	}
-
-	getButton();
-
+	// }
+	// getButton();
 
 
 	/*
-		1. 點一次 C，按鈕會變更為 AC 會清除畫面上數字，但不會把已經儲存的值(已經按過 = 的值)給刪掉，再點 AC 會把所有值清空 歸零
+		1. 只要按了數字，C 就會變成 AC，點一次 C，按鈕會變更為 AC 會清除畫面上數字，但不會把已經儲存的值(已經按過 = 的值)給刪掉，再點 AC 會把所有值清空 歸零
 		2. 任何數字 / 0 都會 顯示 Not a number
 		3. Not a number 再按 C 再按 |+/-| 會顯示 Error
-		4. 先按數字，再按 |+/-| 及 | % | 才會進行數值運算或變更正負值
-		5.  
+		4. 先按數字，再按 |+/-| 及 | % | 才會進行數值運算或變更正負值，單純按
+		5. 
+
+		*/
+
+	// let clearButton = document.querySelector("");
 
 
+	function zero(firstNumber,operator,nextNumber){
+		switch(operator){
+			case "+":
+			break;
+			case "-":
+			break;
+			case "*":
 
-	*/
+			break;
+			case "/":
+			nextNumber = parseInt(nextNumber,10);
 
-
-
-
-
+			if(nextNumber === 0){
+				console.log(firstNumber/nextNumber);
+				
+			}
+			break;
+			default:
+			return;
+		}
+	}
 
 
 

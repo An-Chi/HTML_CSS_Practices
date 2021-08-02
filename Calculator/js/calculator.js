@@ -16,9 +16,6 @@
 	-----------------------------------------------*/
 	class StandardCalculator extends Calculator {
 
-		static INPUT_MODE = 0; // 輸入模式
-        static RESULT_MODE = 1; // 顯示模式
-        static END_MODE = 2; // 結束模式
 
         composeNumber(numberOnDisplay, keyboard){
 			// 
