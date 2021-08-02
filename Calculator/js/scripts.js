@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded",function(){
-	/*	按鈕初始化
+	/*	初始化
 	----------------------------------------*/
-
-	// 
+ 
 	let objCalculator = new StandardCalculator();
 
 	const INPUT_MODE = 0; // 輸入模式
     const RESULT_MODE = 1; // 顯示模式
     const END_MODE = 2; // 結束模式
     let intDisplayMode = INPUT_MODE; // 預設輸入模式
+	console.log(`display mode: ${intDisplayMode}`);
     let summary = 0;  //運算結果
     let operator ="";
     let nextNumber = 0;
@@ -22,11 +22,7 @@ document.addEventListener("DOMContentLoaded",function(){
 	console.log(displayNumPanel.textContent);
 	// objCalculator.calculate().toPrecision(LimitedDigits);
 
-	// Focus 事件
-	// function getFocus(){
 	
-	console.log(objCalculator.INPUT_MODE);
-
 
 	/*--------------
 	 *
@@ -86,8 +82,9 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
 
-
-
+	// Focus 事件
+	// function getFocus(){
+	// keydown event	
 
 
 	/*	button click event
@@ -108,13 +105,13 @@ document.addEventListener("DOMContentLoaded",function(){
 					return displayNumPanel.textContent;
 				}
 				
-				// TODO 修正 btn-clear-all , btn-clear
+				// TODO 修正 btn-clear-all , btn-clear 先做AC 
+				// 點一次 C，按鈕會變更為 AC 會清除畫面上數字，但不會把已經儲存的值給刪掉
+				// 再點 AC 會把所有值清空 歸零
 				if(buttonGroup.includes("btn-clear-all")){
 					return displayNumPanel.textContent = 0;
 				}
 
-
-				
 			});
 
 		});
@@ -125,7 +122,16 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
 
-	
+	/*
+		1. 點一次 C，按鈕會變更為 AC 會清除畫面上數字，但不會把已經儲存的值(已經按過 = 的值)給刪掉，再點 AC 會把所有值清空 歸零
+		2. 任何數字 / 0 都會 顯示 Not a number
+		3. Not a number 再按 C 再按 |+/-| 會顯示 Error
+		4. 先按數字，再按 |+/-| 及 | % | 才會進行數值運算或變更正負值
+		5.  
+
+
+
+	*/
 
 
 
