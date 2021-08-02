@@ -2,11 +2,20 @@ document.addEventListener("DOMContentLoaded",function(){
 	/*	按鈕初始化
 	----------------------------------------*/
 
+	// 
 	let objCalculator = new StandardCalculator();
 
+	const INPUT_MODE = 0; // 輸入模式
+    const RESULT_MODE = 1; // 顯示模式
+    const END_MODE = 2; // 結束模式
+    let intDisplayMode = INPUT_MODE; // 預設輸入模式
+    let summary = 0;  //運算結果
+    let operator ="";
+    let nextNumber = 0;
+
+
+
 	let calculator = document.querySelector("#draggable");
-	// console.log(calculator);
-	// console.log(document.hasFocus());
 	let displayNumPanel = document.querySelector("#displayNumber");
 	const LimitedDigits = 8; // 目前先處理位數 TODO
 	displayNumPanel.textContent = 0;
@@ -15,17 +24,8 @@ document.addEventListener("DOMContentLoaded",function(){
 
 	// Focus 事件
 	// function getFocus(){
-	// 	document.getElementById("draggable").focus();
-	// }
-	// window.addEventListener("focus", getFocus);
-	// console.log(document.hasFocus());
-
-	// if(document.hasFocus()){
-	// 	alert(1);
-
-	// }
-
 	
+	console.log(objCalculator.INPUT_MODE);
 
 
 	/*--------------

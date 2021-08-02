@@ -16,7 +16,11 @@
 	-----------------------------------------------*/
 	class StandardCalculator extends Calculator {
 
-		composeNumber(numberOnDisplay, keyboard){
+		static INPUT_MODE = 0; // 輸入模式
+        static RESULT_MODE = 1; // 顯示模式
+        static END_MODE = 2; // 結束模式
+
+        composeNumber(numberOnDisplay, keyboard){
 			// 
 			if(keyboard.includes("-")){
 				if(numberOnDisplay.substring(0,1) === "-"){
@@ -27,15 +31,15 @@
 
 
 			// 只有0的時候，變成 "0." 不是0得時候，加在數值後面
-				if(numberOnDisplay === 0 && keyboard === "."){
-					return "0.";
-				}
+			if(numberOnDisplay === 0 && keyboard === "."){
+				return "0.";
+			}
 
 
 
 
 
-				return numberOnDisplay += keyboard;
+			return numberOnDisplay += keyboard;
 
 		}
 		//  計算機 firstNumber | activedOperator | nextNumber  
