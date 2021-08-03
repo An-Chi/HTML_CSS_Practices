@@ -62,33 +62,33 @@
 			<div class="btn-group-panel">
 				<div class="row">
 					<!-- AC | C -->
-					<button id="ac" class="btn-all-clear" value="AC" title="Clear All">AC</button>
-					<button id="negative" value="-" title="Negate the displayed value (or press option-Minus)">+/-</button>
-					<button id="%" value="%" title="Percent (or press %)">%</button>
-					<button id="/" class="btn-calculate" value="/" title="Divide (or press /)">÷</button>
+					<button id="ac" class="btn-all-clear btn-clear" data-all-clear="ac" value="AC" title="Clear All">AC</button>
+					<button id="negative"  class="btn-composed" data-comosed="-" value="-" title="Negate the displayed value (or press option-Minus)">+/-</button>
+					<button id="%" class="btn-composed" data-comosed="%" value="%" title="Percent (or press %)">%</button>
+					<button id="/" class="btn-operator" data-operator="/"value="/" title="Divide (or press /)">÷</button>
 				</div>
 				<div class="row">
-					<button class="btn-num" value="7">7</button>
-					<button class="btn-num" value="8">8</button>
-					<button class="btn-num" value="9">9</button>
-					<button id="multiply" class="btn-calculate" value="*" title="Multiply (or press *)">×</button>
+					<button class="btn-num" data-number="7" value="7">7</button>
+					<button class="btn-num" data-number="8" value="8">8</button>
+					<button class="btn-num" data-number="9" value="9">9</button>
+					<button id="multiply" class="btn-operator" data-operator="*" value="*" title="Multiply (or press *)">×</button>
 				</div>
 				<div class="row">
-					<button class="btn-num" value="4">4</button>
-					<button class="btn-num" value="5">5</button>
-					<button class="btn-num" value="6">6</button>
-					<button id="subtract" class="btn-calculate" value="-" title="Subtract (or press -)">－</button>
+					<button class="btn-num" data-number="4" value="4">4</button>
+					<button class="btn-num" data-number="5" value="5">5</button>
+					<button class="btn-num" data-number="6" value="6">6</button>
+					<button id="subtract" class="btn-operator" data-operator="-" value="-" title="Subtract (or press -)">－</button>
 				</div>
 				<div class="row">
-					<button class="btn-num"  value="1">1</button>
-					<button class="btn-num"  value="2">2</button>
-					<button class="btn-num"  value="3">3</button>
-					<button id="plus" class="btn-calculate" title="Add (or Press +)">＋</button>
+					<button class="btn-num" data-number="1"  value="1">1</button>
+					<button class="btn-num" data-number="2"  value="2">2</button>
+					<button class="btn-num" data-number="3"  value="3">3</button>
+					<button id="plus" class="btn-operator" data-operator="+" value="+" title="Add (or Press +)">＋</button>
 				</div>
 				<div class="row last">
-					<button id="btn-zero" class="btn-num"  value="0">0</button>
-					<button id="decimal" class="" value=".">.</button>
-					<button id="equal" class="btn-calculate" title="Equal (or press Return)">＝</button>
+					<button id="btn-zero" class="btn-num" data-number="0" value="0">0</button>
+					<button id="decimal" class="btn-num" data-number="." value=".">.</button>
+					<button id="equal" class="btn-equals" data-equals="=" value="=" title="Equal (or press Return)">＝</button>
 				</div>
 			</div>
 		</div>

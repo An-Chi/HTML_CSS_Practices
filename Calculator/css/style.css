@@ -108,6 +108,11 @@ div.calculator-wrap {
 	/*outline: 1px solid pink;*/
 }
 
+
+.calculator-wrap:focus-within123 {
+	border: 10px solid pink;
+}
+
 /* 計算機 顯示數字 0123456789 面板
 	bgc: #454545;
 	-------------------------------*/
@@ -218,19 +223,26 @@ a#maxmize:before {
 
 
 button#equal {
-	border-bottom-right-radius: 5px 5px;
+	/*border-bottom-right-radius: 5px 5px;*/
 }
 
-button.btn-calculate {
+button.btn-operator, 
+button.btn-equals,
+button.btn-composed,
+button.btn-all-clear {
 	background-color: #DF913C;
 	position: relative;
 }
 
-button.btn-calculate:active {
+button.btn-operator:active, 
+button.btn-equals:active,
+button.btn-composed:active  {
 	color: #000;
 }
 
-button.btn-calculate:active:before {
+button.btn-operator:active:before, 
+button.btn-equals:active:before,
+button.btn-composed:active:before {
 	content: "";
 	position: absolute;
 	top: 0;
