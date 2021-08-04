@@ -1,4 +1,5 @@
 
+
 ### **STEP**
 ---
 #### MAC OS 計算機的運作
@@ -7,6 +8,10 @@
 >可以用 HTML /CSS 處理的
 
 1. 先取得計算機的顏色分類
+<<<<<<< HEAD
+    + 
+=======
+>>>>>>> 3a56e289ab09ba9a211e46885572ec9dc8d1c5a0
     + ![計算機使用顏色(顏色已有修改，待更新)](./images/calculator-color-plate.png)
     
 2. 計算機長寬比例 315px / 435px
@@ -30,7 +35,7 @@
 
 #### MS OS 計算機的運作
 >WIP
-* 先做計算機上數字顯示規則  : 數字、小數點、正負號
+* 先做計算機上數字顯示規則	: 數字、小數點、正負號
 1. 只要按了數字，C 就會變成 AC，點一次 C，按鈕會變更為 AC 會清除畫面上數字，但不會把已經儲存的值(已經按過 = 的值)給刪掉，再點 AC 會把所有值清空 歸零
 2. 任何數字 / 0 都會 顯示 Not a number
 3. Not a number 再按 C 再按 |+/-| 會顯示 Error
@@ -43,7 +48,10 @@
 #### View 
 #### Event
 
+---
 
+### 在 Issues 中記錄待修正錯誤
+>https://github.com/An-Chi/js-practise-everyday/issues
 
 
 ---

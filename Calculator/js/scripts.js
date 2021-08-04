@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 	/* 1. 練習 : 縮小、放大、關閉按鈕 
 	--------------------------------------*/
-	const controlButton = document.querySelector(".icon-set");
+	const controlButton = document.querySelector(".btn-control");
 	controlButton.addEventListener("click",function(event){
 		// console.log(event.target);
 		let id = event.target["id"];
