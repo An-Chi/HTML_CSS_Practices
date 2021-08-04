@@ -7,7 +7,7 @@
 >可以用 HTML /CSS 處理的
 
 1. 先取得計算機的顏色分類
-    + ![計算機使用顏色](./images/calculator-color-plate.png)
+    + ![計算機使用顏色(顏色已有修改，待更新)](./images/calculator-color-plate.png)
     
 2. 計算機長寬比例 315px / 435px
 3. 
@@ -16,10 +16,10 @@
 #### Event
 >需要使用JS處理的
 
-1. keydown
-2. click
+1. click
+2. keydown
 3. drag & drop (先不要做)
-4. 
+4. focus
 
 
 
@@ -29,6 +29,16 @@
 
 
 #### MS OS 計算機的運作
+>WIP
+* 先做計算機上數字顯示規則	: 數字、小數點、正負號
+1. 只要按了數字，C 就會變成 AC，點一次 C，按鈕會變更為 AC 會清除畫面上數字，但不會把已經儲存的值(已經按過 = 的值)給刪掉，再點 AC 會把所有值清空 歸零
+2. 任何數字 / 0 都會 顯示 Not a number
+3. Not a number 再按 C 再按 |+/-| 會顯示 Error
+4. 先按數字，再按 |+/-| 及 | % | 才會進行數值運算或變更正負值，單純按
+5. 以MS OS 計算機中，顯示數字面板上方還有一個紀錄按鍵按了數字或是運算子符號 ，MAC OS  沒有，要按 Command + S 才會出現 paper tape 紀錄，但原理是一樣的，所以宣告一個變數 clickedLog 來儲存按鍵紀錄
+
+
+
 
 #### View 
 #### Event
