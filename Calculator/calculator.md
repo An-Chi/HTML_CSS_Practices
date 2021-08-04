@@ -13,8 +13,8 @@
 #### View 
 >可以用 HTML /CSS 處理的
 
-1. 先取得計算機的顏色分類
->![計算機使用顏色(顏色已有修改，待更新)](./images/calculator-color-plate.png)
+1. 先取得計算機的顏色分類 (顏色已有修改，待更新)
+>![計算機使用顏色](./images/calculator-color-plate.png)
     
 2. 計算機長寬比例 315px / 435px
  
