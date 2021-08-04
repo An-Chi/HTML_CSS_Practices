@@ -1,22 +1,23 @@
 
 
 ### **STEP**
+
+##### 在 Issues 中記錄待修正錯誤
+>https://github.com/An-Chi/js-practise-everyday/issues
+
+
 ---
+
 #### MAC OS 計算機的運作
 
 #### View 
 >可以用 HTML /CSS 處理的
 
 1. 先取得計算機的顏色分類
-<<<<<<< HEAD
-    + 
-=======
->>>>>>> 3a56e289ab09ba9a211e46885572ec9dc8d1c5a0
-    + ![計算機使用顏色(顏色已有修改，待更新)](./images/calculator-color-plate.png)
+>![計算機使用顏色(顏色已有修改，待更新)](./images/calculator-color-plate.png)
     
 2. 計算機長寬比例 315px / 435px
-3. 
-
+ 
 
 #### Event
 >需要使用JS處理的
@@ -27,11 +28,7 @@
 4. focus
 
 
-
-
-
 ---
-
 
 #### MS OS 計算機的運作
 >WIP
@@ -47,12 +44,6 @@
 
 #### View 
 #### Event
-
----
-
-### 在 Issues 中記錄待修正錯誤
->https://github.com/An-Chi/js-practise-everyday/issues
-
 
 ---
 
