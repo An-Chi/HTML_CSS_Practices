@@ -1,22 +1,29 @@
-*, html {
+*, *::before, *::after, html {
 	box-sizing: border-box;
 	font-family: 'Nanum Gothic', sans-serif;
 	/*outline: 1px solid lightcoral;*/
 
 }
 
+html {
+	/*background: linear-gradient(180deg, #434A54, #0B2D4800, #198964);*/
+}
+
+
 html, body {
-	overflow: hidden;
+	/*overflow: hidden;*/
 
 }
 
 body {
+	/*background: linear-gradient(90deg, #afe, grey);*/
 	background-image:url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80") ;
 	/*background-image:url("../images/nasa-Q1p7bh3SHj8-unsplash.jpg") ;*/
-	/*background: linear-gradient();*/
-	background-repeat: no-repeat;
+	/*background-repeat: no-repeat;*/
 	background-size: cover;
 	background-clip: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 /*
@@ -33,7 +40,7 @@ position: relative;
 /* Dock
 -----------------------------*/
 .dock {
-	position: absolute;
+	position: fixed;
 	width: 60px;
 	top: 25%;
 	right: 0;
@@ -108,10 +115,13 @@ div.calculator-wrap {
 	/*outline: 1px solid pink;*/
 }
 
-
-.calculator-wrap:focus-within123 {
-	border: 10px solid pink;
+/*div:focus {
+	outline: 10px solid pink;
 }
+
+div.calculator-wrap:focus-within {
+	outline: 10px solid yellow;
+}*/
 
 /* 計算機 顯示數字 0123456789 面板
 	bgc: #454545;

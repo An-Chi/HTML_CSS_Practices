@@ -12,41 +12,56 @@ document.addEventListener("DOMContentLoaded",function(){
 	----------------------------------------*/
 	let objCalculator = new StandardCalculator();
 	let calculator = document.querySelector("#draggable");
-	let displayNumPanel = document.querySelector("#displayNumber");
+
+
+	// string
+	let outputPanel = document.querySelector("#displayNumber");
+
+
+	// int 
 
 	/* 以MS OS 計算機中，顯示數字面板上方還有一個紀錄按鍵按了數字或是運算子符號 
 	*  MAC OS  沒有，要按 Command + S 才會出現 paper tape 紀錄，
 	*  但原理是一樣的，所以宣告一個變數 keepNumber 來儲存按鍵紀錄
 	*/
-	let keepNumber = ""; 
+	
 	const INPUT_MODE = 0; // 輸入模式
     const RESULT_MODE = 1; // 顯示模式
     const END_MODE = 2; // 結束模式
     let intDisplayMode = INPUT_MODE; // 預設輸入模式
-    console.log(`display mode: ${intDisplayMode}`);
+    // console.log(`display mode: ${intDisplayMode}`);
 
 
 	const LimitedDigits = 8; // 目前先處理位數 TODO
-	displayNumPanel.textContent = 0;
-	let savedNumber = 0;
-	console.log(displayNumPanel.textContent);
+	outputPanel.textContent = 0;
+	// console.log(outputPanel.textContent);
 	// objCalculator.calculate().toPrecision(LimitedDigits);
     let summary = 0;  //運算結果
-    let operator ="";
+    let currentOperator ="";
+    let firstNumber =0;
     let nextNumber = 0;
-
+    let keepNumber = 0; 
+    let clearOnNextNumber = false; //是否清掉下一位數
 
 	/*--------------
-	 *
-	 *	畫面
+	 *	 畫  面
 	 *--------------*/
 
 	/* 先用jQuery的 draggable() 來達成移動計算機
-	vanilla JS 尚未了解怎麼做，稍微查過 Canvas 可以做到
-	-----------------------------------------------*/
+	*  vanilla JS 尚未了解怎麼做，稍微查過 Canvas 可以做到
+	-------------------------------------------------------------*/
 	$(function() {
 		$( "#draggable" ).draggable();
 	} );
+
+
+
+	/* Focus | WIP TODO 
+	--------------------------------------------------------------*/
+	// const getElementFocus = document.querySelectorAll("div");
+	// for(let i = 0; i < getElementFocus.length; i++ ){
+	// 	getElementFocus[i].setAttribute("tabindex","0");
+	// }
 
 
 	/* dock 右邊圖示區域 先只有寫計算機
@@ -57,7 +72,7 @@ document.addEventListener("DOMContentLoaded",function(){
 		if(id === "icon_calculator"){
 			document.querySelector(".calculator-wrap").style.visibility="visible";
 			// TODO 這裡要把計算機的值 reset
-			displayNumPanel.textContent = 0;
+			outputPanel.textContent = 0;
 		}
 
 	});
@@ -80,7 +95,7 @@ document.addEventListener("DOMContentLoaded",function(){
 				document.querySelector(".calculator-wrap").style.visibility="hidden";
 				alert(`${id} 計算機先用隱藏代替關閉，要開啟請按右邊計算機圖示或重新整理`);
 				// 這裡要把計算機的值 reset
-				displayNumPanel.textContent = 0;
+				outputPanel.textContent = 0;
 				break;
 				case "minimize":
 				alert(`${id} 計算機縮小，還沒做`);
@@ -94,64 +109,73 @@ document.addEventListener("DOMContentLoaded",function(){
 	});
 
 
-	/*	button click event
-	----------------------------------------------------*/
-	//test
-	function resetZero(firstNumber,operator,nextNumber){
 
-		nextNumber = parseInt(nextNumber,10);
 
-		if(nextNumber === 0){
-			console.log(firstNumber/nextNumber);			
-		}
+	/*---------------------------
+	 *	button click event
+	 -----------------------------*/
+	 function isOriginalMode(){
+	 	console.log("firstNumber: " + firstNumber);
+	 	if(keepNumber === 0 && firstNumber ===0 && nextNumber === 0 && currentOperator ===""){
+	 		return true;
+	 	}
+	 	return false;
+	 }
+	// console.log(currentOperator, clearOnNextNumber);
+	// console.log("▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼");
+	// console.log("currentOperator",currentOperator);
+	// console.log("clearOnNextNumber",clearOnNextNumber);
+	// console.log("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
+	// console.log("▼▼▼ containOperator ▼▼▼");
+	// console.log("currentOperator",currentOperator);
+	// console.log("clearOnNextNumber",clearOnNextNumber);
+	function containOperator(){
+		if(currentOperator !== "" && clearOnNextNumber){
+			return true;
+		} 
+		console.log("▲▲▲ containOperator false ▲▲▲");
+		return false;
 	}
 
 	const numberButtons = document.querySelectorAll("[data-number]");
 	// console.log(numberButtons);
 	numberButtons.forEach(function(event,index){
 		numberButtons[index].addEventListener("click",function(e){
-			console.log(e.target.value);
-			console.log(e.target);
-
-			displayNumPanel.textContent = objCalculator.composeNumber(displayNumPanel.textContent,e.target.value);
-
-		});
-		// $(numberButtons[index]).on("keydown",function(e){
-		// 	// console.log(e);
-		// 	console.log(e.target);
-
-		// });
-		
-		numberButtons[index].addEventListener("onkeypress", function(e){
-			displayNumPanel.textContent = objCalculator.composeNumber(displayNumPanel.textContent,e.target.value);
-			console.log(e.key);
-			console.log(e.code);
-			console.log(e.target.value);
-
+			// console.log(e.target.value);
+			// console.log("containOperator " + currentOperator);
+			if(containOperator()){
+				outputPanel.textContent = "";
+				// clearOnNextNumber = false;
+				firstNumber = e.target.value;
+				console.log("☆☆ containOperator     " + currentOperator + " ☆☆ ");
+			}
+			outputPanel.textContent = objCalculator.composeNumber(outputPanel.textContent,e.target.value);
+			console.log(`output : ${outputPanel.textContent}`);
+			clearOnNextNumber = true;
 		});
 	});
 
 
 
-
+	// click + - * /  四則運算符號
 	const operatorButtons = document.querySelectorAll("[data-operator]");
 	operatorButtons.forEach(function(event,index){
 		operatorButtons[index].addEventListener("click",function(e){
-			console.log(e.target.value);
-			if(displayNumPanel.textContent === "0"){
-				console.log(`${displayNumPanel.textContent}---displayNumPanel.textContent`);
-
-			}
+			currentOperator = e.target.value;
+			console.log(`⊙_⊙ contain Operator 【 ${currentOperator} 】`);
 
 		});
 	});
 
+	// click  +/-   %    正負號 百分比 
 	const composeButtons = document.querySelectorAll("[data-comosed]");
 	composeButtons.forEach(function(event,index){
 		composeButtons[index].addEventListener("click",function(e){
+
+
 			console.log(e.target.value);
-			console.log(`${displayNumPanel.textContent}---data-comosed`);
-			displayNumPanel.textContent = objCalculator.composeNumber(displayNumPanel.textContent, e.target.value)
+			console.log(`${outputPanel.textContent}---data-comosed`);
+			outputPanel.textContent = objCalculator.composeNumber(outputPanel.textContent, e.target.value)
 
 
 		});
@@ -160,9 +184,36 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
 
+	// click =   等於
 	const equalsButton = document.querySelector("[data-equals]");
 	equalsButton.addEventListener("click",function(e){
+		console.log("Equal Button");
+		console.log(outputPanel.textContent);
+		console.log(firstNumber, nextNumber);
+		
 
+		if(currentOperator !== ""){
+			console.log(`current operator:  ${currentOperator}`);
+			outputPanel.textContent = objCalculator.calculate(firstNumber,nextNumber,currentOperator);
+
+		}else{
+			keepNumber = firstNumber;
+		}
+
+
+
+
+		if(firstNumber !==0 && nextNumber === 0){
+			console.log("hihi" + firstNumber );
+		}
+
+
+
+		
+
+
+		outputPanel.textContent = keepNumber;
+		keepNumber = firstNumber;
 	});
 
 
@@ -174,24 +225,40 @@ document.addEventListener("DOMContentLoaded",function(){
 	const clearButton = document.querySelector(".btn-clear");
 	const clearAllButton = document.querySelector("[data-all-clear]");
 	clearAllButton.addEventListener("click",function(e){
-		displayNumPanel.textContent = 0;
-		savedNumber =0;
-		console.log(`All Clear | savedNumber: ${savedNumber} | displayNumPanel: ${displayNumPanel.textContent}`);
+		clearAll();
 	});		
 
+	//  C button
 	function clearDisplayNumber(event){
-		displayNumPanel.textContent = 0;
+		outputPanel.textContent = 0;
 	}
 
 
 
+	function isNextNumberExist(){
+
+	}
 
 
+	// AC button
+	function clearAll(){
+		firstNumber = 0;
+		nextNumber = 0;
+		currentOperator = "";
+		keepNumber = 0;
+		outputPanel.textContent = "0";
+		console.log(`All Clear | savedNumber: ${keepNumber} | outputPanel: ${outputPanel.textContent}`);
+	}
 
+	//test
+	function resetZero(firstNumber,operator,nextNumber){
 
+		nextNumber = parseInt(nextNumber,10);
 
-
-
+		if(nextNumber === 0){
+			console.log(firstNumber/nextNumber);			
+		}
+	}
 	
 
 

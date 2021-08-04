@@ -17,11 +17,12 @@
 	class StandardCalculator extends Calculator {
 
 
-        composeNumber(numberOnDisplay, keyboard){
-        	console.log(numberOnDisplay, keyboard);
+		composeNumber(numberOnDisplay, keyboard){
+			console.log(`{ composeNumber(${numberOnDisplay}, ${keyboard}) }`);
+			console.log("▲▲▲ containOperator false ▲▲▲");
 			// 只有0 不會轉換 - ，要先有數值 再按正負號 
 			if(keyboard.includes("-")){
-					console.log(numberOnDisplay.substring(1,numberOnDisplay.length));
+				console.log(numberOnDisplay.substring(1,numberOnDisplay.length));
 				if(numberOnDisplay.substring(0,1) === "-"){
 					return numberOnDisplay.substring(1,numberOnDisplay.length);
 				}
@@ -42,7 +43,7 @@
 			if(numberOnDisplay === "0"){
 				numberOnDisplay = "";
 			}
-		
+
 			return numberOnDisplay += keyboard;
 
 		}
