@@ -7,7 +7,8 @@
 >可以用 HTML /CSS 處理的
 
 1. 先取得計算機的顏色分類
-    + ![計算機使用顏色](./images/calculator-color-plate.png)
+    + 
+    + ![計算機使用顏色(顏色已有修改，待更新)](./images/calculator-color-plate.png)
     
 2. 計算機長寬比例 315px / 435px
 3. 
@@ -16,8 +17,8 @@
 #### Event
 >需要使用JS處理的
 
-1. keydown
-2. click
+1. click
+2. keydown
 3. drag & drop (先不要做)
 4. 
 

@@ -1,8 +1,7 @@
-	//練習類別
+	//練習類別 TODO
 	class Calculator {
 		constructor(){
 			// console.log(`| new.target |\n\n ${new.target}`);
-
 			if(new.target === Calculator){
 				throw new TypeError("Cannot construct Abstract instances directly");
 			}
@@ -46,14 +45,13 @@
 			return numberOnDisplay += keyboard;
 
 		}
-		//  計算機 firstNumber | activedOperator | nextNumber  
-		//  按下operator，firstNumber 會先被儲存起來(operator 的click事件中寫)，再按下 nextNumber 去運算
-		//  
+		//  計算機 firstNumber | activedOperator | nextNumber   
 		calculate(firstNumber,nextNumber,activedOperator){
 			firstNumber  = parseFloat(firstNumber);
 			nextNumber  = parseFloat(nextNumber);
 			// console.log(`firstNumber: ${firstNumber} | nextNumber: | ${nextNumber}`);
-			// TODO | no BigDecimal 待解決不精確數字問題，有可使用的 Math.js或者BigDecimal.js 或自己寫運算規則
+			// TODO | no BigDecimal 待解決不精確數字問題，有可使用的 Math.js或者BigDecimal.js 或自己寫運算規則 
+			// 練習先用 parseFloat()
 			let result = 0;  // 
 			// if(nextNumber === )
 			switch(activedOperator){
@@ -72,10 +70,10 @@
 				break;
 			}
 			console.log("result | " + result);
-			let convertResult = result.toFixed(6);
-			convertResult = convertResult.split(".",2);
-			console.log(convertResult[1]);
-			console.log("convertResult  " + convertResult);
+			// let convertResult = result.toFixed(6);
+			// convertResult = convertResult.split(".",2);
+			// console.log(convertResult[1]);
+			// console.log("convertResult  " + convertResult);
 			return result;
 
 		}// End of function calculate
