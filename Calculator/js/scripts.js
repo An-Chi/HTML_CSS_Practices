@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 	/* 1. 練習 : 縮小、放大、關閉按鈕 
 	--------------------------------------*/
-	const controlButton = document.querySelector(".icon-set");
+	const controlButton = document.querySelector(".control-btn-symbol");
 	controlButton.addEventListener("click",function(event){
 		// console.log(event.target);
 		let id = event.target["id"];
@@ -134,13 +134,13 @@ document.addEventListener("DOMContentLoaded",function(){
 
 	function getOperator(e){
 		console.log(`previousOperator | ${previousOperator}  ಥ⌣ಥ contain Operator 【 ${currentOperator} 】`);
-		if(previousOperator != "" && previousOperator == currentOperator){
-			console.log("previousOperator (┳◇┳) " + previousOperator);
-			sum = objCalculator.calculate(outputPanel.textContent,keepNumber,previousOperator); // 
+		// if(previousOperator != "" && previousOperator == currentOperator){
+		// 	console.log("previousOperator (┳◇┳) " + previousOperator);
+		// 	sum = objCalculator.calculate(outputPanel.textContent,keepNumber,previousOperator); // 
 
-			outputPanel.textContent = sum;
+		// 	outputPanel.textContent = sum;
 
-		}
+		// }
 		currentOperator = e.target.value;
 		keepNumber = outputPanel.textContent;
 
