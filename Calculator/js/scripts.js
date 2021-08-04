@@ -3,11 +3,17 @@
 // ISSUE TODO | 目前連(加減乘除)會和連續(等於+加減乘除)衝突 ，再繼續修改。 
 // ISSUE TODO | 正負號切換在0的時候不用
 // ISSUE TODO | % 尚未完成
-
+// ISSUE keepNumber & nextNumber
+// ISSUE 點擊數字再連續按[ - ][ = ] 或 點擊數字再連續按[ / ][ = ] 
+// ISSUE 數字顯示位數、及縮小化
+// ISSUE C 鍵 click  事件未完成
+// ISSUE 運算結果顯示 再按其他數字時，畫面上的運算結果要先清掉。
+// ISSUE 小數點數字 運算問題 (小數點第幾位)
 
 /* 目前可正常操作的 : 
 *  1. 比如 1 + 2 = 3 連續點擊 [ = ] 等於，會一直累加
 *  2. 單純加減乘除 
+*  3. 比如 1 + 2 = 3 連續點擊 [ + ][ = ] 等於，會一直累加	
 */
 // https://codepen.io/contraryAK/pen/WNjgZdN
 document.addEventListener("DOMContentLoaded",function(){
