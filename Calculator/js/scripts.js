@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded",function(){
 			document.querySelector(".calculator-wrap").style.visibility="visible";
 			// TODO 這裡要把計算機的值 reset
 			outputPanel.textContent = 0;
+			clearAll();
 		}
 
 	});
@@ -96,6 +97,7 @@ document.addEventListener("DOMContentLoaded",function(){
 				alert(`${id} 計算機先用隱藏代替關閉，要開啟請按右邊計算機圖示或重新整理`);
 				// 這裡要把計算機的值 reset
 				outputPanel.textContent = 0;
+				clearAll();
 				break;
 				case "minimize":
 				alert(`${id} 計算機縮小，還沒做`);
