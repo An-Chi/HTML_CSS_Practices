@@ -18,8 +18,7 @@
 
 
 		composeNumber(numberOnDisplay, keyboard){
-			console.log(`{ composeNumber(${numberOnDisplay}, ${keyboard}) }`);
-			console.log("▲▲▲ containOperator false ▲▲▲");
+			// console.log(`{ composeNumber(${numberOnDisplay}, ${keyboard}) }`);
 			// 只有0 不會轉換 - ，要先有數值 再按正負號 
 			if(keyboard.includes("-")){
 				console.log(numberOnDisplay.substring(1,numberOnDisplay.length));
@@ -43,7 +42,7 @@
 			if(numberOnDisplay === "0"){
 				numberOnDisplay = "";
 			}
-
+			console.log(`composeNumber return ${numberOnDisplay}, ${keyboard}`);
 			return numberOnDisplay += keyboard;
 
 		}
@@ -51,12 +50,11 @@
 		//  按下operator，firstNumber 會先被儲存起來(operator 的click事件中寫)，再按下 nextNumber 去運算
 		//  
 		calculate(firstNumber,nextNumber,activedOperator){
-			firstNumber  = parseInt(firstNumber,10);
-			nextNumber  = parseInt(nextNumber,10);
+			firstNumber  = parseFloat(firstNumber);
+			nextNumber  = parseFloat(nextNumber);
 			// console.log(`firstNumber: ${firstNumber} | nextNumber: | ${nextNumber}`);
 			// TODO | no BigDecimal 待解決不精確數字問題，有可使用的 Math.js或者BigDecimal.js 或自己寫運算規則
 			let result = 0;  // 
-			console.log(nextNumber);
 			// if(nextNumber === )
 			switch(activedOperator){
 				case "+":
@@ -73,7 +71,12 @@
 				result = firstNumber / nextNumber;
 				break;
 			}
-			return result.toString();
+			console.log("result | " + result);
+			let convertResult = result.toFixed(6);
+			convertResult = convertResult.split(".",2);
+			console.log(convertResult[1]);
+			console.log("convertResult  " + convertResult);
+			return result;
 
 		}// End of function calculate
 

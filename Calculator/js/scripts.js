@@ -13,10 +13,8 @@ document.addEventListener("DOMContentLoaded",function(){
 	let objCalculator = new StandardCalculator();
 	let calculator = document.querySelector("#draggable");
 
-
 	// string
 	let outputPanel = document.querySelector("#displayNumber");
-
 
 	// int 
 
@@ -24,7 +22,7 @@ document.addEventListener("DOMContentLoaded",function(){
 	*  MAC OS  沒有，要按 Command + S 才會出現 paper tape 紀錄，
 	*  但原理是一樣的，所以宣告一個變數 keepNumber 來儲存按鍵紀錄
 	*/
-	
+	/*20210806 TODO 不加判別 等號和其他加減乘除 會互相干擾*/
 	const INPUT_MODE = 0; // 輸入模式
     const RESULT_MODE = 1; // 顯示模式
     const END_MODE = 2; // 結束模式
@@ -32,22 +30,23 @@ document.addEventListener("DOMContentLoaded",function(){
     // console.log(`display mode: ${intDisplayMode}`);
 
 
-	const LimitedDigits = 8; // 目前先處理位數 TODO
+	const LimitedDigits = 8; //  TODO
 	outputPanel.textContent = 0;
 	// console.log(outputPanel.textContent);
 	// objCalculator.calculate().toPrecision(LimitedDigits);
     let summary = 0;  //運算結果
+    let previousOperator = "";
     let currentOperator ="";
     let firstNumber =0;
     let nextNumber = 0;
     let keepNumber = 0; 
     let clearOnNextNumber = false; //是否清掉下一位數
-
+    let clickedLog = "";
 	/*--------------
 	 *	 畫  面
 	 *--------------*/
 
-	/* 先用jQuery的 draggable() 來達成移動計算機
+	/* 先用jQuery的 draggable() 來達成移動計算機 
 	*  vanilla JS 尚未了解怎麼做，稍微查過 Canvas 可以做到
 	-------------------------------------------------------------*/
 	$(function() {
@@ -76,10 +75,6 @@ document.addEventListener("DOMContentLoaded",function(){
 		}
 
 	});
-
-
-
-
 
 
 	/* 1. 練習 : 縮小、放大、關閉按鈕 
@@ -112,110 +107,82 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
 	/*---------------------------
-	 *	button click event
-	 -----------------------------*/
-	 function isOriginalMode(){
-	 	console.log("firstNumber: " + firstNumber);
-	 	if(keepNumber === 0 && firstNumber ===0 && nextNumber === 0 && currentOperator ===""){
-	 		return true;
-	 	}
-	 	return false;
-	 }
-	// console.log(currentOperator, clearOnNextNumber);
-	// console.log("▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼");
-	// console.log("currentOperator",currentOperator);
-	// console.log("clearOnNextNumber",clearOnNextNumber);
-	// console.log("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
-	// console.log("▼▼▼ containOperator ▼▼▼");
-	// console.log("currentOperator",currentOperator);
-	// console.log("clearOnNextNumber",clearOnNextNumber);
-	function containOperator(){
-		if(currentOperator !== "" && clearOnNextNumber){
-			return true;
-		} 
-		console.log("▲▲▲ containOperator false ▲▲▲");
-		return false;
-	}
+	*	button click event
+	-----------------------------*/
 
 	const numberButtons = document.querySelectorAll("[data-number]");
-	// console.log(numberButtons);
 	numberButtons.forEach(function(event,index){
-		numberButtons[index].addEventListener("click",function(e){
-			// console.log(e.target.value);
-			// console.log("containOperator " + currentOperator);
-			if(containOperator()){
-				outputPanel.textContent = "";
-				// clearOnNextNumber = false;
-				firstNumber = e.target.value;
-				console.log("☆☆ containOperator     " + currentOperator + " ☆☆ ");
-			}
-			outputPanel.textContent = objCalculator.composeNumber(outputPanel.textContent,e.target.value);
-			console.log(`output : ${outputPanel.textContent}`);
-			clearOnNextNumber = true;
-		});
+		numberButtons[index].addEventListener("click", getNumberButton)
 	});
+
+	function getNumberButton(e){
+		if(containOperator()){ //  有 加減乘除符號 及尚未清掉下一位數
+			outputPanel.textContent = "";
+			clearOnNextNumber = false;
+			// console.log("☆☆ ≖‿≖ contain Operator     " + currentOperator + " ☆" + e.target.value + " ☆ ");
+		}
+		// 0 + n 
+		outputPanel.textContent = objCalculator.composeNumber(outputPanel.textContent,e.target.value);
+		console.log(`output : ${outputPanel.textContent}`);
+	}
 
 
 
 	// click + - * /  四則運算符號
 	const operatorButtons = document.querySelectorAll("[data-operator]");
-	operatorButtons.forEach(function(event,index){
-		operatorButtons[index].addEventListener("click",function(e){
-			currentOperator = e.target.value;
-			console.log(`⊙_⊙ contain Operator 【 ${currentOperator} 】`);
+	operatorButtons.forEach(function(event,index){ operatorButtons[index].addEventListener("click",getOperator)}  );
 
-		});
-	});
+	function getOperator(e){
+		console.log(`previousOperator | ${previousOperator}  ಥ⌣ಥ contain Operator 【 ${currentOperator} 】`);
+		if(previousOperator != "" && previousOperator == currentOperator){
+			console.log("previousOperator (┳◇┳) " + previousOperator);
+			sum = objCalculator.calculate(outputPanel.textContent,keepNumber,previousOperator); // 
 
-	// click  +/-   %    正負號 百分比 
-	const composeButtons = document.querySelectorAll("[data-comosed]");
-	composeButtons.forEach(function(event,index){
-		composeButtons[index].addEventListener("click",function(e){
+			outputPanel.textContent = sum;
 
+		}
+		currentOperator = e.target.value;
+		keepNumber = outputPanel.textContent;
 
-			console.log(e.target.value);
-			console.log(`${outputPanel.textContent}---data-comosed`);
-			outputPanel.textContent = objCalculator.composeNumber(outputPanel.textContent, e.target.value)
-
-
-		});
-	});
-
+		console.log(`${keepNumber} ⊙_⊙ contain Operator 【 ${currentOperator} 】`);
+		clearOnNextNumber = true;
+	}
 
 
 
 	// click =   等於
 	const equalsButton = document.querySelector("[data-equals]");
-	equalsButton.addEventListener("click",function(e){
+	equalsButton.addEventListener("click",equals);
+
+	function equals(e){
 		console.log("Equal Button");
-		console.log(outputPanel.textContent);
-		console.log(firstNumber, nextNumber);
-		
-
-		if(currentOperator !== ""){
-			console.log(`current operator:  ${currentOperator}`);
-			outputPanel.textContent = objCalculator.calculate(firstNumber,nextNumber,currentOperator);
-
+		console.log(clickedLog + "  clickedLog");
+		//  有 加減乘除符號 及尚未清掉下一位數
+		if(nextNumber !== 0 && !containOperator()){
+			console.log(`nextNumber: ${nextNumber} | ${outputPanel.textContent} | ${currentOperator}`);
+			sum = objCalculator.calculate(outputPanel.textContent,nextNumber,currentOperator); // 
 		}else{
-			keepNumber = firstNumber;
+			nextNumber = outputPanel.textContent;
+			sum = objCalculator.calculate(keepNumber,outputPanel.textContent,currentOperator); // 
+			console.log(`keepNumber: ${keepNumber} | ${outputPanel.textContent} | ${currentOperator}`);
 		}
 
+		//  + = 正常運作 但是 純粹按等於 不對
+		outputPanel.textContent = sum;
+		console.log(`current operator:  ${currentOperator}`);
+	}
 
 
+	// click  +/-   %    正負號 百分比 
+	const composeButtons = document.querySelectorAll("[data-comosed]");
+	composeButtons.forEach(function(event,index){
+		composeButtons[index].addEventListener("click",function(e){
+			// console.log(e.target.value);
+			// console.log(`${outputPanel.textContent}---data-comosed`);
+			outputPanel.textContent = objCalculator.composeNumber(outputPanel.textContent, e.target.value)
 
-		if(firstNumber !==0 && nextNumber === 0){
-			console.log("hihi" + firstNumber );
-		}
-
-
-
-		
-
-
-		outputPanel.textContent = keepNumber;
-		keepNumber = firstNumber;
+		});
 	});
-
 
 
 
@@ -234,7 +201,6 @@ document.addEventListener("DOMContentLoaded",function(){
 	}
 
 
-
 	function isNextNumberExist(){
 
 	}
@@ -245,6 +211,7 @@ document.addEventListener("DOMContentLoaded",function(){
 		firstNumber = 0;
 		nextNumber = 0;
 		currentOperator = "";
+		previousOperator= "";
 		keepNumber = 0;
 		outputPanel.textContent = "0";
 		console.log(`All Clear | savedNumber: ${keepNumber} | outputPanel: ${outputPanel.textContent}`);
@@ -261,6 +228,24 @@ document.addEventListener("DOMContentLoaded",function(){
 	}
 	
 
+	function isOriginalMode(){
+		console.log("firstNumber: " + firstNumber);
+		if(keepNumber === 0 && firstNumber ===0 && nextNumber === 0 && currentOperator ===""){
+			return true;
+		}
+		return false;
+	}
+
+	function containOperator(){
+		if(currentOperator !== "" && clearOnNextNumber){ // 有加減乘除符號 && 尚未清掉下一位數
+			previousOperator = currentOperator;
+			console.log("previousOperator | " + previousOperator);
+
+			return true;
+		} 
+		console.log("ಠ_ಠ contain Operator()  false !!");
+		return false;
+	}
 
 
 
