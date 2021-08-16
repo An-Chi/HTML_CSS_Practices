@@ -270,7 +270,10 @@ button#btn-zero {
 	border-bottom-left-radius: 5px 5px;
 	padding: 0 20px;
 }
+button#equal {
+	border-bottom-right-radius: 5px 5px;
 
+}
 
 .display-area {
 	display: flex;
