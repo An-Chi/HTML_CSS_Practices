@@ -1,0 +1,8 @@
+.parent-component{
+  border: 1px solid black;
+  padding: 20px;
+}
+.child-component{
+  background-color: #e67e22;
+  border: 1px solid black;
+}
