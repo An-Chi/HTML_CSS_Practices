@@ -1,0 +1,144 @@
+/* There are two ways to use Reset.css:
+1. Setting Reset CSS Base after clicking the top left gear icon when using CodePen. 
+
+2. Adding/Importing Reset.css from https://meyerweb.com/eric/tools/css/reset/ when using Text Editor.
+ */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+*,
+*:before,
+*:after {
+    /*   outline: 1px solid orange; */
+    box-sizing: border-box;
+}
+
+/* link url: google fonts */
+body {
+    font-family: "Noto Sans", sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.nav {
+    border: 2px solid #9b9b9b;
+}
+
+.logo {
+    display: inline-block;
+    padding: 25px;
+}
+
+/* main tag should be unique to the document. */
+main {
+    border: 3px solid red;
+    padding: 10px 25px 180px 25px;
+}
+
+.description {
+    color: blue;
+    line-height: 1.6;
+    padding: 10px 0px;
+}
+
+.btn-download,
+footer p {
+    text-align: center;
+}
+
+.btn-download {
+    background-color: blue;
+    color: #ffffff;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.btn-download:hover {
+    background-color: #000;
+    transition: background-color 0.3s;
+}
+
+footer {
+    background-color: pink;
+}
+
+.address {
+    font-weight: 700;
+    padding: 20px;
+}
+
+
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+
+@media screen and (min-width: 1280px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1280px;
+    }
+}
