@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-CSS教學</title>
+    <!--   <link rel="stylesheet" href="./css/style.css"> -->
+    <style>
+        h1 {
+            color: blue;
+        }
+
+        h2 {
+            border-left: 5px solid red;
+            border-bottom: 5px solid red;
+        }
+
+        p {
+            border: 0px 2px 2px 0px solid red;
+        }
+
+        a {
+            color: red;
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .false-option {
+            text-decoration: line-through;
+        }
+
+        .logo {
+            margin-top: 15px;
+            padding: 20px;
+            border: 3px solid #9B9B9B;
+        }
+
+        .logo:hover {
+            border: 3px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">CSS教學</h1>
+    <p>在這堂課程上面，你了解如何使用CSS設定用在HTML標籤上，以及設定 <a href="#">連結顏色</a></p>
+
+    <h2 class="excecise-questions">這章節你認識的CSS設定文字語法</h2>
+    <ol class="multiple-choice-items">
+        <li>文字顏色: color</li>
+        <li>文字大小: font-size</li>
+        <li>文字行距: line-height</li>
+        <li>文字字型: font-family</li>
+        <li>其他..</li>
+    </ol>
+
+    <h2 class="excecise-questions">下列的emmet語法，哪一項是錯的?</h2>
+    <ul class="multiple-choice-items">
+        <li>! = HTML5 環境</li>
+        <li>link:src = 匯入CSS</li>
+        <li>p*4 = 顯示4個p段落</li>
+        <li>h1 = 展開h1的開頭與結尾html標籤</li>
+        <li class="false-option">lorem=自動就幫我們寫完網頁</li>
+    </ul>
+    <h2 class="excecise-questions">在圖片上加上logo的線條</h2>
+
+    <img src="https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/footerLogo.png" class="logo"
+        alt="hexschool logo">
+
+</body>
+
+</html>
