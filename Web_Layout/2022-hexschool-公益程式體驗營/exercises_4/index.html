@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Layout_練習 | 讓您奠定良好的前端基礎 | 六角學院</title>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Noto+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Noto+Sans:wght@300;400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -29,17 +30,21 @@
     </div>
 
     <header class="header">
-      <a href="#" class="home"><img
-          src="https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/logo.png"
-          alt="HexSchool Logo">
-      </a>
-      <nav class="navigation">
-        <ul>
-          <li><a href="#">首頁</a></li>
-          <li><a href="#">產品介紹</a></li>
-          <li><a href="#">聯絡我們</a></li>
-        </ul>
-      </nav>
+      <div class="header-wrap">
+        <a href="#" class="home"><img
+            src="https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/logo.png"
+            alt="HexSchool Logo">
+        </a>
+        <nav class="navigation">
+          <ul>
+            <li><a href="#">首頁</a></li>
+            <li><a href="#">產品介紹</a></li>
+            <li><a href="#">聯絡我們</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
     </header>
 
 
@@ -51,35 +56,47 @@
     </section>
 
     <section class="curriculum-feature">
-      <div class="curr-feat-wrap">
-        <div class="curr-feat">
-          <!-- HTML 5 -->
-          <div class="curr-feat-card">
+      <div class="curr-feat">
+        <!-- HTML 5 -->
+        <div class="curr-feat-card">
+          <div class="card-col">
             <div class="card-logo">
               <!-- <img src="https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/html.png"
                 alt="Html 5 基礎教學示意圖"> -->
-                <img src="https://clhuang224.github.io/HexCourses/HTMLCSS/final_1/img/html.png" alt="Html 5 基礎教學示意圖">
+              <img src="https://clhuang224.github.io/HexCourses/HTMLCSS/final_1/img/html.png" alt="Html 5 基礎教學示意圖">
             </div>
+          </div>
+          <div class="card-description">
             <h3 class="card-title">Html 5 基礎教學</h3>
             <p>主流前端網站設計的基礎就在六角學院，在這裡不在是填鴨式教學，而是透過實際的範例，瞭解正確的網站開發流程，講師均具有業界開發經驗，讓學員學習業界主流的開發方法。</p>
           </div>
-          <!-- RWD -->
-          <div class="curr-feat-card">
+        </div>
+        <!-- RWD -->
+        <div class="curr-feat-card">
+          <div class="card-col">
             <div class="card-logo">
+              <!--  -->
               <!-- <img src="https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/rwd.png"
                 alt="響應式網站設計示意圖"> -->
-                <img src="https://clhuang224.github.io/HexCourses/HTMLCSS/final_1/img/rwd.png" alt="響應式網站設計示意圖">
+              <!--  -->
+              <img src="https://clhuang224.github.io/HexCourses/HTMLCSS/final_1/img/rwd.png" alt="響應式網站設計示意圖">
             </div>
+          </div>
+          <div class="card-description">
             <h3 class="card-title">響應式網站設計</h3>
             <p>響應式網站設計 (Responsive web design)，目前大多使用者均是以手機瀏覽的情況下，響應式網站已經是必備的。六角學院將會提供業界響應式開發方法，讓學生瞭解行動版開發技巧。</p>
           </div>
-          <!-- jQuery -->
-          <div class="curr-feat-card">
+        </div>
+        <!-- jQuery -->
+        <div class="curr-feat-card">
+          <div class="card-col">
             <div class="card-logo">
               <!-- <img src="https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/jQuery.png"
                 alt="jQuery 實戰教學示意圖"> -->
-                <img src="https://clhuang224.github.io/HexCourses/HTMLCSS/final_1/img/jquery.png" alt="jQuery 實戰教學示意圖">
+              <img src="https://clhuang224.github.io/HexCourses/HTMLCSS/final_1/img/jquery.png" alt="jQuery 實戰教學示意圖">
             </div>
+          </div>
+          <div class="card-description">
             <h3 class="card-title">jQuery 實戰教學</h3>
             <p>本課程有以下特色</p>
             <ul>
@@ -89,6 +106,7 @@
               <li>套件的操作及運用</li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
@@ -155,13 +173,13 @@
           </div>
           <div class="form-group">
             <label for="name">姓名</label>
-            <input type="text" id="name" placeholder="請輸入姓名">
+            <input type="text" id="name" placeholder="請輸入姓名" value="六角講師">
             <br>
             <label for="tel">電話</label>
-            <input type="tel" id="tel" placeholder="請輸入電話">
+            <input type="tel" id="tel" placeholder="請輸入電話" value="0912345678">
             <br>
             <label for="email">信箱</label>
-            <input type="email" id="email" placeholder="請輸入姓名">
+            <input type="email" id="email" placeholder="請輸入姓名" value="hexschool@mail.com">
             <button type="submit">送出</button>
 
           </div>
