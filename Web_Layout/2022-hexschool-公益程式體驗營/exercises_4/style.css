@@ -2,7 +2,7 @@
 *,
 *:before,
 *:after {
-  outline: 1px solid orange;
+  /* outline: 1px solid orange; */
   box-sizing: border-box;
 }
 
@@ -141,7 +141,7 @@ h3 {
 
 /* Curriculum Feature */
 .curriculum-feature {
-  padding-top: 50px;
+  padding-top: 15px;
 }
 
 .curr-feat {
@@ -151,6 +151,7 @@ h3 {
 
 
 .curr-feat-card {
+  display: block;
   width: 100%;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
@@ -159,6 +160,9 @@ h3 {
   padding: 5px 10px;
 }
 
+.card-description h3 {
+  padding: 10px 5px;
+}
 
 .card-col {
   display: flex;
@@ -166,6 +170,15 @@ h3 {
   align-items: center;
   height: 140px;
   margin-top: 10px;
+}
+
+.card-description {
+  flex-grow: 0;
+}
+
+
+.card-logo {
+  display: block;
 }
 
 
@@ -177,12 +190,8 @@ h3 {
 }
 
 
-.card-title {
-  padding: 10px 5px;
-}
-
 .card-logo,
-.card-title,
+.card-description h3,
 .comparison-chart h2,
 .contact-us h2 {
   text-align: center;
@@ -335,7 +344,9 @@ footer div {
 }
 
 
-@media screen and (min-width: 480px) {
+
+/* Media Query 480px */
+@media screen and (min-width: 490px) {
   .header-wrap {
     justify-content: space-between;
   }
@@ -348,6 +359,33 @@ footer div {
     flex-grow: 0;
   }
 
+
+.curr-feat-card {
+  display: flex;
+}
+
+.card-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card-description {
+  flex-grow: 1;
+}
+
+.card-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+}
+
+.card-description h3 {
+  text-align: left;
+}
+
   .client-info {
     flex-wrap: nowrap;
   }
@@ -355,35 +393,27 @@ footer div {
   .contact-info textarea {
     height: 100%;
   }
+
 }
 
 
-
-
-
+/* Media Query 640px */
 @media screen and (min-width: 640px) {
   .hexschool-footer-logo {
     display: block;
   }
 
-
   footer {
     justify-content: space-between;
-
   }
-
 }
 
-
+/* Media Query 768px */
 @media screen and (min-width: 768px) {
-
 
   .social-media-wrap {
     justify-content: end;
   }
-
-
-
 
   .banner {
     height: 345px;
@@ -394,8 +424,25 @@ footer div {
     font-size: 36px;
 
   }
-
+  .curriculum-feature {
+    padding-top: 50px;
+  }
+  
   .curr-feat {
     flex-wrap: nowrap;
   }
+
+  .curr-feat-card {
+    display: block;
+  }
+
+
+  .card-logo {
+    width: 100%;
+  }
+  
+  .card-description h3 {
+    text-align: center;
+  }
+
 }
