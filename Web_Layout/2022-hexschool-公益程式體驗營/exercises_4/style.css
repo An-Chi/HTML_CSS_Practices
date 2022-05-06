@@ -98,9 +98,9 @@ h3 {
 
 .nav li::after {
   background-color: #01CC99;
+  content: "";
   display: none;
   position: absolute;
-  content: "";
   bottom: 0px;
   left: 0px;
   right: 0px;
