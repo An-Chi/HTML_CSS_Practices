@@ -1,8 +1,7 @@
-/* style */
+/* style in common */
 *,
 *:before,
 *:after {
-  /* outline: 1px solid orange; */
   box-sizing: border-box;
 }
 
@@ -28,9 +27,14 @@ h3 {
   font-size: 18px;
 }
 
+:focus {
+  /* outline: 1px dotted #01CC99; */
+}
+
+/* Main Container */
 .container {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 1024px;
 }
 
 /* Social Media */
@@ -53,14 +57,14 @@ h3 {
 
 .social-media a:first-of-type {
   color: #4460A0;
-  border-right: 1px solid lightgray;
+  border-top: 1px solid #d3d3d3;
 }
 
 .social-media img {
   vertical-align: top;
 }
 
-
+/* TODO 待修改 mobile first - navigation content - align */
 /* header navigation */
 .header-wrap {
   display: flex;
@@ -106,10 +110,10 @@ h3 {
   background-color: #01CC99;
   transition: width .5s, background-color 1s;
 }
-
-.navigation li:first-of-type:after {
+/* 首頁 - 連結 固定出現底線 */
+/* .navigation li:first-of-type:after {
   display: inline-block;
-}
+} */
 
 .navigation li:hover::after {
   display: inline-block;
@@ -360,31 +364,31 @@ footer div {
   }
 
 
-.curr-feat-card {
-  display: flex;
-}
+  .curr-feat-card {
+    display: flex;
+  }
 
-.card-col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
+  .card-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
 
-.card-description {
-  flex-grow: 1;
-}
+  .card-description {
+    flex-grow: 1;
+  }
 
-.card-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
-}
+  .card-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+  }
 
-.card-description h3 {
-  text-align: left;
-}
+  .card-description h3 {
+    text-align: left;
+  }
 
   .client-info {
     flex-wrap: nowrap;
@@ -424,10 +428,11 @@ footer div {
     font-size: 36px;
 
   }
+
   .curriculum-feature {
     padding-top: 50px;
   }
-  
+
   .curr-feat {
     flex-wrap: nowrap;
   }
@@ -440,7 +445,7 @@ footer div {
   .card-logo {
     width: 100%;
   }
-  
+
   .card-description h3 {
     text-align: center;
   }
