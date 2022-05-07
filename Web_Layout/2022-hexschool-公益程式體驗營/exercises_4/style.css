@@ -70,6 +70,16 @@ h3 {
   justify-content: center;
 }
 
+
+@media screen and (min-width: 490px) {
+  .header-wrap {
+    justify-content: space-between;
+  }
+}
+
+
+
+
 .nav {
   flex-grow: 1;
   margin-right: 5px;
@@ -80,6 +90,15 @@ h3 {
   justify-content: space-evenly;
 }
 
+@media screen and (min-width: 490px) {
+
+  .nav ul {
+    justify-content: flex-end;
+  }
+
+}
+
+
 .nav ul li {
   align-items: center;
   display: flex;
@@ -88,6 +107,16 @@ h3 {
   margin: 0 5px;
   position: relative;
 }
+
+
+@media screen and (min-width: 490px) {
+
+  .nav ul li {
+    flex-grow: 0;
+  }
+
+}
+
 
 .nav a {
   color: #01CC99;
@@ -107,6 +136,7 @@ h3 {
   height: 3px;
   transition: width .5s, background-color 1s;
 }
+
 
 /* 首頁 - 連結 固定出現底線 */
 /* .nav li:first-of-type:after {
@@ -162,8 +192,12 @@ h3 {
   width: 100%;
 }
 
-.card-description h3 {
-  padding: 10px 5px;
+@media screen and (min-width: 490px) {
+
+  .curr-feat-card {
+    display: flex;
+  }
+
 }
 
 .card-col {
@@ -174,22 +208,16 @@ h3 {
   margin-top: 10px;
 }
 
-.card-description {
-  flex-grow: 0;
+@media screen and (min-width: 490px) {
+
+  .card-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
 }
-
-
-.card-logo {
-  display: block;
-}
-
-
-/* 使用flex + max-width */
-.card-logo img {
-  max-width: 100%;
-  vertical-align: middle;
-}
-
 
 .card-logo,
 .card-description h3,
@@ -198,6 +226,42 @@ h3 {
   text-align: center;
 }
 
+
+.card-logo {
+  display: block;
+}
+
+@media screen and (min-width: 490px) {
+
+  .card-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+  }
+
+}
+
+/* 使用flex + max-width */
+.card-logo img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.card-description {
+  flex-grow: 0;
+}
+
+@media screen and (min-width: 490px) {
+
+  .card-description {
+    flex-grow: 1;
+  }
+
+  .card-description h3 {
+    text-align: left;
+  }
+}
 
 .curr-feat-card p,
 .curr-feat-card ul {
@@ -212,6 +276,8 @@ h3 {
 .curr-feat-card ul li {
   list-style-type: disc;
 }
+
+
 
 /* 線上及實體課程的差異 */
 .comparison-chart {
@@ -267,6 +333,14 @@ h3 {
   flex-wrap: wrap;
 }
 
+@media screen and (min-width: 490px) {
+
+  .client-info {
+    flex-wrap: nowrap;
+  }
+
+}
+
 .form-group,
 .form-group input,
 .form-group textarea,
@@ -301,14 +375,22 @@ h3 {
   outline: 1px solid #fff;
 }
 
-.contact-info textarea {
+.form-group textarea {
   border-radius: 5px;
   height: 150px;
   resize: none;
   padding: 10px;
 }
 
-.contact-info button {
+@media screen and (min-width: 490px) {
+
+  .form-group textarea {
+    height: 100%;
+  }
+
+}
+
+.submit {
   background-color: #00CC99;
   border: none;
   border-radius: 3px;
@@ -318,7 +400,8 @@ h3 {
   padding: 8px 20px;
 }
 
-.contact-info button:hover {
+
+.submit:hover {
   background-color: #fff;
   color: #00CC99;
   cursor: pointer;
@@ -345,56 +428,6 @@ footer div {
 
 
 
-/* Media Query 480px */
-@media screen and (min-width: 490px) {
-  .header-wrap {
-    justify-content: space-between;
-  }
-
-  .nav ul {
-    justify-content: flex-end;
-  }
-
-  .nav ul li {
-    flex-grow: 0;
-  }
-
-
-  .curr-feat-card {
-    display: flex;
-  }
-
-  .card-col {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-  }
-
-  .card-description {
-    flex-grow: 1;
-  }
-
-  .card-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
-  }
-
-  .card-description h3 {
-    text-align: left;
-  }
-
-  .client-info {
-    flex-wrap: nowrap;
-  }
-
-  .contact-info textarea {
-    height: 100%;
-  }
-
-}
 
 
 /* Media Query 640px */
