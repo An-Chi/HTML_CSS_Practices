@@ -41,6 +41,13 @@ h3 {
   padding-right: 10px;
 }
 
+/* Keep Media Queries Close to Relevant Declaration Blocks */
+@media screen and (min-width: 768px) {
+  .social-media-wrap {
+    justify-content: end;
+  }
+}
+
 .social-media {
   display: inline-block;
   font-size: 16px;
@@ -70,15 +77,11 @@ h3 {
   justify-content: center;
 }
 
-
 @media screen and (min-width: 490px) {
   .header-wrap {
     justify-content: space-between;
   }
 }
-
-
-
 
 .nav {
   flex-grow: 1;
@@ -91,13 +94,10 @@ h3 {
 }
 
 @media screen and (min-width: 490px) {
-
   .nav ul {
     justify-content: flex-end;
   }
-
 }
-
 
 .nav ul li {
   align-items: center;
@@ -110,11 +110,9 @@ h3 {
 
 
 @media screen and (min-width: 490px) {
-
   .nav ul li {
     flex-grow: 0;
   }
-
 }
 
 
@@ -159,6 +157,12 @@ h3 {
   height: 155px;
 }
 
+@media screen and (min-width: 768px) {
+  .banner {
+    height: 345px;
+  }
+}
+
 .slogan-wrap {
   background-color: rgba(1, 4, 10, .3);
   color: #fff;
@@ -171,14 +175,33 @@ h3 {
   line-height: 1.4;
 }
 
+@media screen and (min-width: 768px) {
+  .slogan {
+    font-size: 36px;
+  }
+}
+
+
 /* Curriculum Feature */
 .curriculum-feature {
   padding-top: 15px;
 }
 
+@media screen and (min-width: 768px) {
+  .curriculum-feature {
+    padding-top: 50px;
+  }
+}
+
 .curr-feat {
   display: flex;
   flex-wrap: wrap;
+}
+
+@media screen and (min-width: 768px) {
+  .curr-feat {
+    flex-wrap: nowrap;
+  }
 }
 
 
@@ -193,11 +216,15 @@ h3 {
 }
 
 @media screen and (min-width: 490px) {
-
   .curr-feat-card {
     display: flex;
   }
+}
 
+@media screen and (min-width: 768px) {
+  .curr-feat-card {
+    display: block;
+  }
 }
 
 .card-col {
@@ -209,14 +236,12 @@ h3 {
 }
 
 @media screen and (min-width: 490px) {
-
   .card-col {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
   }
-
 }
 
 .card-logo,
@@ -226,20 +251,35 @@ h3 {
   text-align: center;
 }
 
+@media screen and (min-width: 490px) {
+  .card-description h3 {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card-description h3 {
+    text-align: center;
+  }
+}
 
 .card-logo {
   display: block;
 }
 
 @media screen and (min-width: 490px) {
-
   .card-logo {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 250px;
   }
+}
 
+@media screen and (min-width: 768px) {
+  .card-logo {
+    width: 100%;
+  }
 }
 
 /* 使用flex + max-width */
@@ -253,15 +293,11 @@ h3 {
 }
 
 @media screen and (min-width: 490px) {
-
   .card-description {
     flex-grow: 1;
   }
-
-  .card-description h3 {
-    text-align: left;
-  }
 }
+
 
 .curr-feat-card p,
 .curr-feat-card ul {
@@ -334,11 +370,9 @@ h3 {
 }
 
 @media screen and (min-width: 490px) {
-
   .client-info {
     flex-wrap: nowrap;
   }
-
 }
 
 .form-group,
@@ -383,11 +417,9 @@ h3 {
 }
 
 @media screen and (min-width: 490px) {
-
   .form-group textarea {
     height: 100%;
   }
-
 }
 
 .submit {
@@ -414,6 +446,12 @@ footer {
   padding: 30px 20px;
 }
 
+@media screen and (min-width: 640px) {
+  footer {
+    justify-content: space-between;
+  }
+}
+
 footer a {
   color: #e55995;
 }
@@ -426,57 +464,8 @@ footer div {
   display: none;
 }
 
-
-
-
-
-/* Media Query 640px */
 @media screen and (min-width: 640px) {
   .hexschool-footer-logo {
     display: block;
   }
-
-  footer {
-    justify-content: space-between;
-  }
-}
-
-/* Media Query 768px */
-@media screen and (min-width: 768px) {
-
-  .social-media-wrap {
-    justify-content: end;
-  }
-
-  .banner {
-    height: 345px;
-
-  }
-
-  .slogan {
-    font-size: 36px;
-
-  }
-
-  .curriculum-feature {
-    padding-top: 50px;
-  }
-
-  .curr-feat {
-    flex-wrap: nowrap;
-  }
-
-  .curr-feat-card {
-    display: block;
-  }
-
-
-  .card-logo {
-    width: 100%;
-  }
-
-  .card-description h3 {
-    text-align: center;
-  }
-
 }
