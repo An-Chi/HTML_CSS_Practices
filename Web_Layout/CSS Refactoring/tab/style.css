@@ -1,0 +1,169 @@
+/* reusable components 
+  1. 在製作組件(component)前，先定義所需要的行為。 如 : 
+    - 當tab被點選時，底框會變成藍色而背景為白色。
+    - 當頁籤未被點選時，背景色為灰色。
+
+  2. 保持組件樣式粒度並設定合理的預設值。
+  3. 以在其周圍置放具不同類別的容器元素的方式，是需要覆寫群組組件的視覺樣式。
+  4. 讓結構容器為其指定大小。
+保持組件樣式粒度的意思是每一種組件樣式應該只用來為一個元素指定樣式
+
+
+
+
+*/
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/**
+ *  頁籤組件樣式 Tab Component Styles
+ */
+
+.tab {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  bottom: -1px;
+  display: inlne-block;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 4px;
+  position: relative;
+}
+
+
+.tab:hover {
+  background-color: #f9f9f9;
+}
+
+.tab.active {
+  background-color: #fff;
+  color: #000;
+}
+
+.tab > a {
+  color: inherit;
+  display: block;
+  height: 100%;
+  padding: 12px;
+  text-decoration: none;
+  width: 100%;
+}
+
+/**
+ *  頁籤組件容器 Tab Component Containers
+ */
+
+.tab-group, .tab-group-vertical {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+
+.tab, .tab-group, .tab-group-vertical {
+  border-color: #eee;
+  border-style: solid;
+  border-width: 0;
+}
+
+/* 水平頁籤群組 Horizontal Tab Groups */
+
+.tab-group {
+  border-block-width: 1px;
+}
+
+.tab-group .tab {
+  border-left-width: 1px;
+  border-right-width: 1px;
+  left: -1px;
+  display: inline-block;
+}
+
+.tab-group .tab:first-child {
+  border-left-width: 1px;
+  border-top-left-radius: 4px;
+}
+
+.tab-group .tab:last-child {
+  border-right-width: 1px;
+  border-top-right-radius: 4px;
+}
+
+.tab-group .tab.active {
+  border-bottom-color: #2196f3;
+  border-bottom-width: 1px;
+}
+
+/* 垂直頁籤群組 Vertical Tab Groups */
+
+.tab-group-vertical {
+  border-left-width: 1px;
+}
+
+.tab-group-vertical .tab {
+  border-left-width: 1px;
+  border-right-width: 1px;
+  left: -1px;
+  display: block;
+}
+
+.tab-group-vertical .tab:first-child {
+  border-top-width: 1px;
+  border-top-right-radius: 4px;
+}
+
+.tab-group-vertical .tab:last-child {
+  border-bottom-width: 1px;
+  border-bottom-right-radius: 4px;
+}
+
+.tab-group-vertical .tab.active {
+  border-left-color: #2196f3;
+  border-left-width: 1px;
+}
+
+/* 頁籤組件容器 Tab Component Containers */
+.tabbed-pane {
+  display: block;
+  width: 100%;
+}
+
+.tabbed-pane .tab-group {
+  float: left;
+  width: 45%;
+}
+
+.tabbed-pane .tab-group:first-child {
+  margin-right: 5%;
+}
+
+.tabbed-pane .tab-group:last-child {
+  margin-left: 5%;
+}
+
+/* 結構樣式 Structural Styles */
+
+.global-nav {
+  float: left;
+  margin: 10px;
+  padding: 5% 0;
+  width: 10%;
+}
+
+.content {
+  float: left;
+  padding: 5%;
+  width: 80%;
+}
+
