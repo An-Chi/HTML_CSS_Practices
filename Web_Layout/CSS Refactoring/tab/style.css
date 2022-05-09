@@ -1,4 +1,6 @@
-/* reusable components 
+/* 
+Book: CSS Refactoring by Steve Lindstrom
+reusable components 
   1. 在製作組件(component)前，先定義所需要的行為。 如 : 
     - 當tab被點選時，底框會變成藍色而背景為白色。
     - 當頁籤未被點選時，背景色為灰色。
