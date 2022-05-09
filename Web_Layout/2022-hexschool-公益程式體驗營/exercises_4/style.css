@@ -44,6 +44,7 @@ h3 {
 /* Keep Media Queries Close to Relevant Declaration Blocks */
 @media screen and (min-width: 768px) {
   .social-media-wrap {
+    display: flex;
     justify-content: end;
   }
 }
@@ -60,7 +61,7 @@ h3 {
 }
 
 .social-media a:first-of-type {
-  border-top: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
   color: #4460A0;
 }
 
