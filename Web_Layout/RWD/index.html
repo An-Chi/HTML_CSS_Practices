@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,60 @@
   <title>Document</title>
   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-  <!-- container 讓裡面的內容橫向排列 -->
+  <!-- container 讓裡面的內容橫向排列 ， 定寬容器 -->
   <div class="container">
-    <!-- column 是負責分割欄位 -->
-    <div class="col-4">
-      <!-- p 段落 是內容資料 -->
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus non impedit eos vitae, voluptatum porro magni deleniti amet accusantium eum dolorem repellat. Dicta cumque consectetur quasi esse, consequatur perferendis saepe.</p>
-    </div>
-    <div class="col-4">
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus non impedit eos vitae, voluptatum porro magni deleniti amet accusantium eum dolorem repellat. Dicta cumque consectetur quasi esse, consequatur perferendis saepe.</p>
-    </div>
-    <div class="col-4">
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus non impedit eos vitae, voluptatum porro magni deleniti amet accusantium eum dolorem repellat. Dicta cumque consectetur quasi esse, consequatur perferendis saepe.</p>
+    <!-- 會建立一個 row class 來負責 flex 操作，折分欄、換列使用 -->
+    <div class="row">
+      <!-- column 是負責分割欄位 -->
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <!-- 不要直接在 欄位容器中直接塞進內容，另外加上一個內容容器 item -->
+        <!-- p 段落 是內容資料 -->
+        <!-- 定寬容器 > 分割欄位容器 > 內容容器 > 內容資料 -->
+        <div class="item">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus non impedit eos vitae, voluptatum
+            porro magni deleniti amet accusantium eum dolorem repellat. Dicta cumque consectetur quasi esse, consequatur
+            perferendis saepe.</p>
+        </div>
+
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="item">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus non impedit eos vitae, voluptatum
+            porro magni deleniti amet accusantium eum dolorem repellat. Dicta cumque consectetur quasi esse, consequatur
+            perferendis saepe.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="item">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus non impedit eos vitae, voluptatum
+            porro magni deleniti amet accusantium eum dolorem repellat. Dicta cumque consectetur quasi esse, consequatur
+            perferendis saepe.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="item">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus non impedit eos vitae, voluptatum
+            porro magni deleniti amet accusantium eum dolorem repellat. Dicta cumque consectetur quasi esse, consequatur
+            perferendis saepe.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="item">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus non impedit eos vitae, voluptatum
+            porro magni deleniti amet accusantium eum dolorem repellat. Dicta cumque consectetur quasi esse, consequatur
+            perferendis saepe.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 
 
+
 </body>
+
 </html>
