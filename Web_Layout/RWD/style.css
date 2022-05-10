@@ -5,10 +5,15 @@
 
 /* 定寬容器 : 一般不會拿來作為 flex */
 .container {
+  --grid-gap: 10px;
   display: flex;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: auto;
+  padding-left: var(--grid-gap);
+  padding-right:  var(--grid-gap);
+  outline: 1px solid aqua;
+
 }
 
 /* 會建立一個 row class 來負責 flex 操作 
@@ -17,6 +22,9 @@
 .row {
   display: flex;
   flex-wrap: wrap;
+  margin-left: calc(var(--grid-gap) * -1);
+  margin-left: calc(var(--grid-gap) * -1);
+  outline: 1px solid lightcoral;
 }
 
 /* [class*="col-"] {
@@ -27,11 +35,11 @@
 
 /* IE 不支援 自訂屬性寫法 */
 [class*="col-"] {
-  --grid-gap: 10px;
   box-sizing: border-box;
   padding-left: var(--grid-gap);
   padding-right: var(--grid-gap);
   margin-bottom: 20px;
+  outline: 1px solid royalblue;
 } 
 
 
