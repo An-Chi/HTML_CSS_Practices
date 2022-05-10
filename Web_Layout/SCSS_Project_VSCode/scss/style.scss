@@ -1,4 +1,15 @@
 .header {
+  height: 500px;
+  .logo {
+    background-color: #000;
+    a {
+      color: pink;
+      &:hover {
+        color: yellow;
+      }
+    }
+
+  }
   h1 {
     width: 300px;
   }
