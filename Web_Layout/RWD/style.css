@@ -19,6 +19,7 @@
 /* 會建立一個 row class 來負責 flex 操作 
    折分欄、換列使用
 */
+/* 用 calc 計算負值  */
 .row {
   display: flex;
   flex-wrap: wrap;
