@@ -1,0 +1,31 @@
+$width: 100%;
+$buttonNumber: 6;
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// nesting 比較像 wireframe 的 dom 結構
+// > 會比空白鍵的 後代選取器 效能來得比較高
+// 雙斜線 註解不會轉譯，適合給自己的註解  /**/ 這個會增加css大小 或是要給工程師或上線版本會需要看的註解
+// SASS 適合拿來建立 工作環境與線上的差異的觀念
+.tabList {
+  >header {
+    >ul {
+      list-style: none;
+      // li 使用inline-block，每一個 inline block 會多一個字元，在 ul 使用font-size:0 會消除字元間間距
+      font-size: 0px;
+    }
+    li {
+      display: inline-block;
+      width: $width / $ $buttonNumber;
+      // width: calc(100% / 6);
+      font-style: 16px;
+    }
+  }
+  >div {
+    color: red;
+  }
+}
