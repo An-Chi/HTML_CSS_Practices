@@ -2,7 +2,10 @@ $width: 100%;
 $buttonNumber: 6;
 // $baseLineHeight: 10px;
 $baseSize: 14px;
+$baseLineSize: 10px;
 $sizeLevel: 2px;
+$paddingLevel: 1.2;
+
 
 // .aButton 改成 %aButton 代表此選取器樣式為專門拿來被繼承的樣式
 // 繼承而來的樣式一般都會另外修改樣式，所以通常用來被繼承的樣式，都放在上面。
@@ -18,14 +21,36 @@ $sizeLevel: 2px;
     $level: 0;
   }
   @return $baseSize + $sizeLevel * round($level);
+  // 12px + 4px * 1
 }
 
 
 @function rhythm($size) {
   @return ceil($size * $paddingLevel / $baseLineSize) * $baseLineSize;
+  // ceil(16px * 1.2 / 10px) * 10 ==> 20
 }
 
+// font-size: 20px;
+// line-height: 2 ==> 40px
 
+
+
+
+
+
+// 參數最多三個左右就好
+// level 是 ui kit 內的級制
+@mixin font($level:1, $line-height: auto){
+  $size: font($level); // 16px
+  $line: rhythm($size); // 20px
+  font-size: $size;
+  @if $line-height == auto or $line-height < $line {
+    line-height: $line;
+  } @else {
+    line-height: $line-height;
+  }
+
+}
 
 
 
@@ -53,17 +78,21 @@ $sizeLevel: 2px;
 .aaa {
   // @extend %aButton;
   @include aButton();
-  font-size: font(5);
+  // font-size: font(5);
+  // line-height: rhythm(font(5));
+  @include font(2);
 }
 
 .bbb {
   // @extend %aButton;
   @include aButton();
+  @include font(4);
 }
 
 .ccc {
   // @extend %aButton;
   @include aButton();
+  @include font(1);
 }
 
 
