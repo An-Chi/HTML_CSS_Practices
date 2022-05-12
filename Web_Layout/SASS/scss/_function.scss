@@ -1,7 +1,7 @@
-
+// [ Alex 宅幹嘛 ] 👨‍💻從 CSS 到 SASS (SCSS) 超入門觀念引導 https://www.youtube.com/watch?v=mzuKtTuimEE
 // _function 檔案前面底線 就不會被編譯成css
 
-
+// for loop 多半用在產生動畫 或是像Bootstrap 的 class 如 col-1, col-2...etc.
 // .aButton 改成 %aButton 代表此選取器樣式為專門拿來被繼承的樣式
 // 繼承而來的樣式一般都會另外修改樣式，所以通常用來被繼承的樣式，都放在上面。
 %aButton {
