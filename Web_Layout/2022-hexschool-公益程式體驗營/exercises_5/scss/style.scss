@@ -16,13 +16,17 @@
     top: 0;
   }
 
-  .menu ul a {
-    display: block;
-  }
-  .menu ul li {
+  // .menu ul a {
+  //   display: block;
+  // }
+  //  ul 以下一定是 li ， a 應該是在 li 之下
+  .menu li {
     color: #fff;
-    a:hover {
-      font-weight: bolder;
+    a {
+      display: block;
+      &:hover {
+        font-weight: bolder;
+      }
     }
   }
 
