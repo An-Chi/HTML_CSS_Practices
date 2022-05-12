@@ -1,0 +1,28 @@
+@import "function";
+
+
+// 做出和 extend 一樣的功能，差別在於 mixin 會產生各不同選取器的相同樣式，這邊範例就會產生三份樣式，.aaa / .bbb / .ccc 都會有相同的樣式，所以不要用mixin做 extend 的事情
+@mixin aButton() {
+  text-decoration: none;
+  display: block;
+}
+
+.aaa {
+  // @extend %aButton;
+  @include aButton();
+  // font-size: font(5);
+  // line-height: rhythm(font(5));
+  @include font(2);
+}
+
+.bbb {
+  // @extend %aButton;
+  @include aButton();
+  @include font(4);
+}
+
+.ccc {
+  // @extend %aButton;
+  @include aButton();
+  @include font(1);
+}
