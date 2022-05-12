@@ -1,11 +1,105 @@
 $width: 100%;
 $buttonNumber: 6;
+// $baseLineHeight: 10px;
+$baseSize: 14px;
+$sizeLevel: 2px;
+
+// .aButton 改成 %aButton 代表此選取器樣式為專門拿來被繼承的樣式
+// 繼承而來的樣式一般都會另外修改樣式，所以通常用來被繼承的樣式，都放在上面。
+%aButton {
+  display: block;
+  text-decoration: none;
+}
+
+
+// 要大量學function 用法，可參考Bootstrap 4 Source Code
+@function font($level: 0){
+  @if $level < 0 {
+    $level: 0;
+  }
+  @return $baseSize + $sizeLevel * round($level);
+}
+
+
+@function rhythm($size) {
+  @return ceil($size * $paddingLevel / $baseLineSize) * $baseLineSize;
+}
+
+
+
+
+
+
+// 利用function 定義基本尺寸，只要修改 變數值就能改掉 有呼叫到此 function 的 值
+// @function line($count:1){
+//   @return $baseLineHeight * $count; 
+// }
+
+@function line($count:1, $baseLineHeight: 10px){
+  @return $baseLineHeight * $count; 
+}
+
+// 做出和 extend 一樣的功能，差別在於 mixin 會產生各不同選取器的相同樣式，這邊範例就會產生三份樣式，.aaa / .bbb / .ccc 都會有相同的樣式，所以不要用mixin做 extend 的事情
+@mixin aButton() {
+  text-decoration: none;
+  display: block;
+}
+
+
+// mixin 適合用來做 大型官網 + UI Kit 的 design guideline 設計規範 、組件、套件、零件 XD
+
+
+
+.aaa {
+  // @extend %aButton;
+  @include aButton();
+  font-size: font(5);
+}
+
+.bbb {
+  // @extend %aButton;
+  @include aButton();
+}
+
+.ccc {
+  // @extend %aButton;
+  @include aButton();
+}
+
 
 html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+
+
+.aa {
+  // padding: 20px;
+  padding: line(2,12px);
+}
+
+.bb {
+  // padding: 10px;
+  padding: line(1);
+  // or 不傳參數預設值為1
+  // padding: line();
+}
+
+.cc {
+  // padding: 30px;
+  padding: line(3);
+}
+
+
+
+
+
+
+
+
+
 
 // nesting 比較像 wireframe 的 dom 結構
 // > 會比空白鍵的 後代選取器 效能來得比較高
@@ -20,9 +114,15 @@ html {
     }
     li {
       display: inline-block;
-      width: $width / $ $buttonNumber;
+      width: $width / $buttonNumber;
       // width: calc(100% / 6);
       font-style: 16px;
+      > a {
+        @extend %aButton; // 樣式和 aButton 一樣，利用繼承方式，自動將同樣樣式的選取器整理在一起，只要修改 .aButton 一份樣式，其他繼承此選取器樣式的都會跟著更改。
+        width: 100%;
+        height: 20px;
+        line-height: 20px;
+      }
     }
   }
   >div {
