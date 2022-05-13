@@ -47,18 +47,11 @@ table {
 	border-spacing: 0;
 }
 
-
-
-/* custom style */
-
-.header a {
+/* base style */
+a {
   color: red;
 }
 
-.content a {
-  color: red;
-}
-
-.footer a {
-  color: red;
+a:hover {
+  color: blue;
 }
