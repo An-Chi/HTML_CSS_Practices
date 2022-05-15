@@ -1,0 +1,20 @@
+/* base styles : http://smacss.com/book/type-base
+0. A base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudo-classes.
+1. It's defining the default styling for how that element should look in all occurrences on the page.
+2. It doesn't include any class or ID selectors.
+3. It include setting heading sizes, default link styles, default font styles, and body backgrounds.
+4. There should be no need to use !important in a Base style.
+
+*/
+a {
+  color: red;
+}
+
+a:hover {
+  color: blue;
+}
+
+img {
+  min-width: 100%;
+  height: auto;
+}

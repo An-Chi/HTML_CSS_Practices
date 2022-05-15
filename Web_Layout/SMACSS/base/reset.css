@@ -46,12 +46,3 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-/* base style */
-a {
-  color: red;
-}
-
-a:hover {
-  color: blue;
-}
