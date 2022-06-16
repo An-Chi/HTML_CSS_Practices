@@ -49,13 +49,6 @@ h3 {
   padding-right: 10px;
 }
 
-/* Keep Media Queries Close to Relevant Declaration Blocks */
-@media screen and (min-width: 768px) {
-  .social-media-wrap {
-    display: flex;
-    justify-content: end;
-  }
-}
 
 .social-media {
   display: flex;
@@ -94,11 +87,6 @@ h3 {
   justify-content: center;
 }
 
-@media screen and (min-width: 490px) {
-  .header {
-    justify-content: space-between;
-  }
-}
 
 .nav {
   flex-grow: 1;
@@ -110,11 +98,6 @@ h3 {
   justify-content: space-evenly;
 }
 
-@media screen and (min-width: 490px) {
-  .nav ul {
-    justify-content: flex-end;
-  }
-}
 
 .nav ul li {
   align-items: center;
@@ -125,11 +108,7 @@ h3 {
   position: relative;
 }
 
-@media screen and (min-width: 490px) {
-  .nav ul li {
-    flex-grow: 0;
-  }
-}
+
 
 .nav a {
   color: #01cc99;
@@ -169,11 +148,7 @@ h3 {
   height: 155px;
 }
 
-@media screen and (min-width: 768px) {
-  .banner {
-    height: 345px;
-  }
-}
+
 
 .slogan-wrap {
   background-color: rgba(1, 4, 10, 0.3);
@@ -187,33 +162,21 @@ h3 {
   line-height: 1.4;
 }
 
-@media screen and (min-width: 768px) {
-  .slogan {
-    font-size: 36px;
-  }
-}
+
 
 /* Curriculum Feature */
 .curriculum-feature {
   padding-top: 15px;
 }
 
-@media screen and (min-width: 768px) {
-  .curriculum-feature {
-    padding-top: 50px;
-  }
-}
+
 
 .curr-feat {
   display: flex;
   flex-wrap: wrap;
 }
 
-@media screen and (min-width: 768px) {
-  .curr-feat {
-    flex-wrap: nowrap;
-  }
-}
+
 
 .curr-feat-card {
   border: 1px solid #f3f3f3;
@@ -225,18 +188,7 @@ h3 {
   width: 100%;
 }
 
-@media screen and (min-width: 490px) {
-  .curr-feat-card {
-    display: flex;
-    align-items: center;
-  }
-}
 
-@media screen and (min-width: 768px) {
-  .curr-feat-card {
-    display: block;
-  }
-}
 
 .card-logo,
 .card-description h3,
@@ -246,40 +198,16 @@ h3 {
   text-align: center;
 }
 
-@media screen and (min-width: 490px) {
-  .card-description h3 {
-    text-align: left;
-  }
-}
 
-@media screen and (min-width: 768px) {
-  .card-description h3 {
-    text-align: center;
-  }
-}
 
 .card-logo {
   display: block;
 }
 
-@media screen and (min-width: 490px) {
-  .card-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
-  }
-}
 
-@media screen and (min-width: 768px) {
-  .card-logo {
-    width: 100%;
-  }
-}
 
 /* 使用flex + max-width */
 .card-logo img {
-  max-width: 100%;
   vertical-align: middle;
 }
 
@@ -287,11 +215,7 @@ h3 {
   flex-grow: 0;
 }
 
-@media screen and (min-width: 490px) {
-  .card-description {
-    flex-grow: 1;
-  }
-}
+
 
 .curr-feat-card p,
 .curr-feat-card ul {
@@ -362,11 +286,7 @@ h3 {
   justify-content: space-between;
 }
 
-@media screen and (min-width: 490px) {
-  .client-info {
-    flex-wrap: nowrap;
-  }
-}
+
 
 .form-group {
   width: 100%;
@@ -375,11 +295,6 @@ h3 {
   align-items: flex-end;
 }
 
-@media screen and (min-width: 490px) {
-  .form-group {
-    width: 48%;
-  }
-}
 
 .form-group input,
 .form-group textarea,
@@ -415,11 +330,7 @@ h3 {
   padding: 10px;
 }
 
-@media screen and (min-width: 490px) {
-  .form-group textarea {
-    height: 100%;
-  }
-}
+
 
 .submit {
   background-color: #00cc99;
@@ -445,11 +356,7 @@ footer {
   padding: 30px 20px;
 }
 
-@media screen and (min-width: 640px) {
-  footer {
-    justify-content: space-between;
-  }
-}
+
 
 .contact-hexschool a {
   color: #e55995;
@@ -476,8 +383,105 @@ footer {
   display: none;
 }
 
+
+
+/* Put Media Queries at the bottom of the entire code */
+@media screen and (min-width: 490px) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .nav ul {
+    justify-content: flex-end;
+  }
+
+  .nav ul li {
+    flex-grow: 0;
+  }
+
+  .curr-feat-card {
+    display: flex;
+    align-items: center;
+  }
+
+  .card-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+  }
+
+  .card-description {
+    flex-grow: 1;
+  }
+
+  .card-description h3 {
+    text-align: left;
+  }
+
+  .client-info {
+    flex-wrap: nowrap;
+  }
+
+  .form-group {
+    width: 48%;
+  }
+
+  .form-group textarea {
+    height: 100%;
+  }
+}
+
+
+
 @media screen and (min-width: 640px) {
+  footer {
+    justify-content: space-between;
+  }
+
   .hexschool-footer-logo {
     display: block;
+  }
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+  .social-media-wrap {
+    display: flex;
+    justify-content: end;
+  }
+
+  .banner {
+    height: 345px;
+  }
+
+  .slogan {
+    font-size: 36px;
+  }
+
+  .curriculum-feature {
+    padding-top: 50px;
+  }
+
+  .curr-feat {
+    flex-wrap: nowrap;
+  }
+
+  .curr-feat-card {
+    display: block;
+  }
+
+  .card-description h3 {
+    text-align: center;
+  }
+
+  .card-logo {
+    width: 100%;
+  }
+
+  .card-logo img {
+    width: 100%;
   }
 }
