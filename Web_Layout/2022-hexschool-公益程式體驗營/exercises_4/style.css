@@ -7,6 +7,7 @@ https://stackoverflow.com/questions/62047994/is-it-best-to-group-similar-media-q
 *:before,
 *:after {
   box-sizing: border-box;
+  /* outline: 1px solid orange; */
 }
 
 body {
@@ -194,13 +195,11 @@ h3 {
 .card-description h3,
 .comparison-chart h2,
 .contact-us h2 {
-  padding: 2px;
+  padding: 5px;
   text-align: center;
 }
 
-.card-description {
-  margin-left: 5px;
-}
+
 
 .card-logo {
   display: block;
@@ -211,9 +210,14 @@ h3 {
 /* 使用flex + max-width */
 .card-logo img {
   vertical-align: middle;
-  height: auto; 
   max-width: 250px;
 }
+
+.card-description {
+  flex-grow: 0;
+}
+
+
 
 .curr-feat-card p,
 .curr-feat-card ul {
@@ -383,9 +387,6 @@ footer {
 
 
 
-
-
-
 /* Put Media Queries at the bottom of the entire code */
 @media screen and (min-width: 490px) {
   .header {
@@ -478,8 +479,11 @@ footer {
     text-align: center;
   }
 
-  .card-logo img {
+  .card-logo {
     width: 100%;
   }
 
+  .card-logo img {
+    width: 100%;
+  }
 }
