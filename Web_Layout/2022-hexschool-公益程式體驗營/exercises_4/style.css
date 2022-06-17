@@ -194,11 +194,13 @@ h3 {
 .card-description h3,
 .comparison-chart h2,
 .contact-us h2 {
-  padding: 5px;
+  padding: 2px;
   text-align: center;
 }
 
-
+.card-description {
+  margin-left: 5px;
+}
 
 .card-logo {
   display: block;
@@ -209,13 +211,9 @@ h3 {
 /* 使用flex + max-width */
 .card-logo img {
   vertical-align: middle;
+  height: auto; 
+  max-width: 250px;
 }
-
-.card-description {
-  flex-grow: 0;
-}
-
-
 
 .curr-feat-card p,
 .curr-feat-card ul {
@@ -333,7 +331,7 @@ h3 {
 
 
 .submit {
-  background-color: #00cc99;
+  background-color: #01cc99;
   border: none;
   border-radius: 3px;
   color: #fff;
@@ -344,7 +342,7 @@ h3 {
 
 .submit:hover {
   background-color: #fff;
-  color: #00cc99;
+  color: #01cc99;
   cursor: pointer;
 }
 
@@ -382,6 +380,9 @@ footer {
 .hexschool-footer-logo {
   display: none;
 }
+
+
+
 
 
 
@@ -477,11 +478,8 @@ footer {
     text-align: center;
   }
 
-  .card-logo {
-    width: 100%;
-  }
-
   .card-logo img {
     width: 100%;
   }
+
 }

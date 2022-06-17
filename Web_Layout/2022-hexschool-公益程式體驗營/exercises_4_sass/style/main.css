@@ -1,0 +1,423 @@
+@charset "UTF-8";
+/* There are two ways to use Reset.css:
+1. Setting Reset CSS Base after clicking the top left gear icon when using CodePen. 
+
+2. Adding/Importing Reset.css from https://meyerweb.com/eric/tools/css/reset/ when using Text Editor.
+ */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* base styles */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
+}
+
+h2,
+h3 {
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+/* Main Container */
+.container {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+.header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 16px;
+  padding: 5px 0px;
+}
+.social-media > li {
+  padding: 5px;
+  text-align: center;
+}
+.social-media > li:hover {
+  -webkit-box-shadow: 1px 3px 0px 0px rgba(119, 117, 117, 0.2);
+          box-shadow: 1px 3px 0px 0px rgba(119, 117, 117, 0.2);
+}
+.social-media > li:first-of-type {
+  border-right: 1px solid #d3d3d3;
+}
+.social-media a {
+  color: #4460a0;
+  padding: 0 10px;
+}
+.social-media img {
+  vertical-align: top;
+}
+
+.nav {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-right: 5px;
+}
+.nav > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+.nav li {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 5px;
+  position: relative;
+}
+.nav li::after {
+  background-color: #01cc99;
+  content: "";
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 3px;
+  -webkit-transition: width 0.5s, background-color 1s;
+  transition: width 0.5s, background-color 1s;
+}
+.nav li:hover::after {
+  display: inline-block;
+}
+.nav a {
+  color: #01cc99;
+  display: block;
+  padding: 20px 10px;
+}
+
+/* banner & slogan */
+.banner {
+  background-image: url("https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 155px;
+}
+
+.slogan-wrap {
+  background-color: rgba(1, 4, 10, 0.3);
+  color: #fff;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 28px 10px;
+}
+
+.slogan {
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+/* Curriculum Feature */
+.curriculum-feature {
+  padding-top: 15px;
+}
+
+.curr-feat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.curr-feat-card {
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 3px 0px 0px rgba(119, 117, 117, 0.2);
+          box-shadow: 1px 3px 0px 0px rgba(119, 117, 117, 0.2);
+  display: block;
+  margin: 15px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.card-logo,
+.card-description h3,
+.comparison-chart h2,
+.contact-us h2 {
+  padding: 5px;
+  text-align: center;
+}
+
+.card-logo {
+  display: block;
+}
+.card-logo img {
+  vertical-align: middle;
+}
+
+.card-description {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
+.curr-feat-card p,
+.curr-feat-card ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.curr-feat-card ul {
+  padding-left: 20px;
+}
+.curr-feat-card ul > li {
+  list-style-type: disc;
+}
+
+/* 線上及實體課程的差異 */
+.comparison-chart {
+  padding: 25px 0px;
+}
+.comparison-chart > h2 {
+  padding: 25px;
+}
+
+.comparison {
+  margin: 0 auto;
+  width: 95%;
+}
+.comparison > thead th {
+  background-color: #f7f7f7;
+  border-top: 1px solid lightgray;
+  text-align: left;
+}
+.comparison th, .comparison td {
+  border-bottom: 1px solid lightgrey;
+  padding: 10px;
+}
+
+.highlight {
+  color: #26ad88;
+}
+
+/* Contact Us */
+.contact-us {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00644b), to(#009771));
+  background-image: linear-gradient(#00644b, #009771);
+  padding: 15px;
+}
+.contact-us > h2 {
+  color: #fff;
+  line-height: 1.6;
+  padding: 20px 0;
+}
+
+.contact-info {
+  padding: 15px 5px;
+}
+
+.client-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form-group {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.form-group > input,
+.form-group > textarea,
+.form-group label {
+  text-align: left;
+  width: 100%;
+}
+.form-group > input,
+.form-group > label {
+  border-radius: 2px;
+  margin: 5px 0px 0px 5px;
+}
+.form-group > label {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+.form-group > input {
+  border: none;
+  font-size: 14px;
+  margin: 10px 0;
+  padding: 6px;
+  outline: 1px solid #fff;
+}
+.form-group > textarea {
+  border-radius: 5px;
+  height: 150px;
+  resize: none;
+  padding: 10px;
+}
+
+.submit {
+  background-color: #01cc99;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  margin: 10px 3px 0 0;
+  padding: 8px 20px;
+  width: 100px;
+}
+.submit:hover {
+  background-color: #fff;
+  color: #01cc99;
+  cursor: pointer;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 1.6;
+  padding: 30px 20px;
+}
+
+.hexschool-footer-logo {
+  display: none;
+}
+
+.contact-hexschool a {
+  color: #e55995;
+  position: relative;
+}
+.contact-hexschool a:hover::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(229, 89, 149, 0.2);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  -webkit-transition: width 0.5s, background-color 1s;
+  transition: width 0.5s, background-color 1s;
+}

@@ -1,0 +1,30 @@
+/* 線上及實體課程的差異 */
+.comparison-chart {
+  padding: 25px 0px;
+
+  >h2 {
+    padding: 25px;
+  }
+}
+
+
+
+.comparison {
+  margin: 0 auto;
+  width: 95%;
+  >thead th {
+    background-color: #f7f7f7;
+    border-top: 1px solid lightgray;
+    text-align: left;
+  }
+
+  th, td {
+    border-bottom: 1px solid lightgrey;
+    padding: 10px;
+  }
+
+}
+
+.highlight {
+  color: #26ad88;
+}

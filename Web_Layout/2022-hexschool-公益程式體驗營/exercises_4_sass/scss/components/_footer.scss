@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.6;
+  padding: 30px 20px;
+}
+
+.hexschool-footer-logo {
+  display: none;
+}
+
+
+.contact-hexschool a {
+  color: #e55995;
+  position: relative;
+
+
+  &:hover::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(229, 89, 149, 0.2);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    transition: width 0.5s, background-color 1s;
+  }
+}
+
+
+

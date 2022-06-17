@@ -1,0 +1,29 @@
+.social-media {
+  display: flex;
+  font-size: 16px;
+  padding: 5px 0px;
+
+  >li {
+    padding: 5px;
+    text-align: center;
+
+    &:hover {
+      box-shadow: 1px 3px 0px 0px rgba(119, 117, 117, 0.2);
+    }
+
+    &:first-of-type {
+      border-right: 1px solid #d3d3d3;
+
+    }
+  }
+
+  a {
+    color: #4460a0;
+    padding: 0 10px;
+  }
+
+  img {
+    vertical-align: top;
+  }
+
+}

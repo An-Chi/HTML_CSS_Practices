@@ -1,0 +1,68 @@
+/* Curriculum Feature */
+.curriculum-feature {
+  padding-top: 15px;
+}
+
+
+
+.curr-feat {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+.curr-feat-card {
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-shadow: 1px 3px 0px 0px rgba(119, 117, 117, 0.2);
+  display: block;
+  margin: 15px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+
+
+.card-logo,
+.card-description h3,
+.comparison-chart h2,
+.contact-us h2 {
+  padding: 5px;
+  text-align: center;
+}
+
+
+
+.card-logo {
+  display: block;
+
+  //使用flex + max-width
+  img {
+    vertical-align: middle;
+
+  }
+}
+
+
+
+.card-description {
+  flex-grow: 0;
+}
+
+
+
+.curr-feat-card p,
+.curr-feat-card ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.curr-feat-card ul {
+  padding-left: 20px;
+
+  >li {
+    list-style-type: disc;
+
+  }
+}

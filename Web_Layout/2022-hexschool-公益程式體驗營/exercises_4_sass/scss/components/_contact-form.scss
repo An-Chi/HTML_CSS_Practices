@@ -1,0 +1,81 @@
+/* Contact Us */
+.contact-us {
+  background-image: linear-gradient(#00644b, #009771);
+  padding: 15px;
+
+  >h2 {
+    color: #fff;
+    line-height: 1.6;
+    padding: 20px 0;
+  }
+}
+
+
+.contact-info {
+  padding: 15px 5px;
+}
+
+.client-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  >input,
+  >textarea,
+  label {
+    text-align: left;
+    width: 100%;
+  }
+
+  >input,
+  >label {
+    border-radius: 2px;
+    margin: 5px 0px 0px 5px;
+  }
+
+  >label {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  >input {
+    border: none;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 6px;
+    outline: 1px solid #fff;
+  }
+
+  >textarea {
+    border-radius: 5px;
+    height: 150px;
+    resize: none;
+    padding: 10px;
+  }
+}
+
+.submit {
+  background-color: #01cc99;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  margin: 10px 3px 0 0;
+  padding: 8px 20px;
+  width: 100px;
+
+  &:hover {
+    background-color: #fff;
+    color: #01cc99;
+    cursor: pointer;
+  }
+}

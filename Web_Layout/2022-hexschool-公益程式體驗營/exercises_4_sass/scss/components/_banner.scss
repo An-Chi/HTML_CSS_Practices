@@ -1,0 +1,22 @@
+/* banner & slogan */
+.banner {
+  background-image: url("https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+  display: flex;
+  align-items: center;
+  height: 155px;
+}
+
+.slogan-wrap {
+  background-color: rgba(1, 4, 10, 0.3);
+  color: #fff;
+  flex-grow: 1;
+  padding: 28px 10px;
+}
+
+.slogan {
+  font-size: 22px;
+  line-height: 1.4;
+}

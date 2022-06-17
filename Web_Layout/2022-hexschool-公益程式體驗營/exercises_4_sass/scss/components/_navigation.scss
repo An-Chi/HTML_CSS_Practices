@@ -1,0 +1,48 @@
+.nav {
+  flex-grow: 1;
+  margin-right: 5px;
+
+  > ul {
+    display: flex;
+    justify-content: space-evenly;
+
+  }
+
+  li {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 0 5px;
+    position: relative;
+
+    &::after {
+      background-color: #01cc99;
+      content: "";
+      display: none;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      height: 3px;
+      transition: width 0.5s, background-color 1s;
+    }
+
+    &:hover::after {
+  display: inline-block;
+
+    }
+  }
+
+  a {
+    color: #01cc99;
+    display: block;
+    padding: 20px 10px;
+  }
+
+}
+
+
+// .nav li:hover::after {
+//   display: inline-block;
+// }
