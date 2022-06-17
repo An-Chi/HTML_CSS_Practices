@@ -207,16 +207,11 @@ h3 {
 
 
 
-/* 使用flex + max-width */
+/* 使用 max-width */
 .card-logo img {
   vertical-align: middle;
   max-width: 250px;
 }
-
-.card-description {
-  flex-grow: 0;
-}
-
 
 
 .curr-feat-card p,
