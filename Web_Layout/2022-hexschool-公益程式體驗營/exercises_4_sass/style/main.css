@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /* There are two ways to use Reset.css:
 1. Setting Reset CSS Base after clicking the top left gear icon when using CodePen. 
 
@@ -9,87 +8,19 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -99,17 +30,8 @@ video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
@@ -117,20 +39,16 @@ body {
   line-height: 1;
 }
 
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 
-blockquote,
-q {
+blockquote, q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before, blockquote:after,
+q:before, q:after {
   content: "";
   content: none;
 }
@@ -166,7 +84,7 @@ table {
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -216,77 +134,69 @@ h3 {
   font-size: 16px;
   padding: 5px 0px;
 }
-
-.social-media>li {
+.social-media > li {
   padding: 5px;
   text-align: center;
 }
-
-.social-media>li:hover {
+.social-media > li:hover {
   -webkit-box-shadow: 1px 3px 0px 0px var(--shadow-primary);
-  box-shadow: 1px 3px 0px 0px var(--shadow-primary);
+          box-shadow: 1px 3px 0px 0px var(--shadow-primary);
 }
-
-.social-media>li:first-of-type {
+.social-media > li:first-of-type {
   border-right: 1px solid var(--border-primary);
 }
-
 .social-media a {
   color: var(--link-sns);
   padding: 0 10px;
 }
-
 .social-media img {
   vertical-align: top;
 }
 
 .header {
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .nav {
   -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   margin-right: 5px;
 }
-
-.nav>ul {
+.nav > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
-
 .nav li {
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0 5px;
   position: relative;
 }
-
 .nav li::after {
   background-color: var(--bgc-primary);
   content: "";
@@ -299,11 +209,9 @@ h3 {
   -webkit-transition: width 0.5s, background-color 1s;
   transition: width 0.5s, background-color 1s;
 }
-
 .nav li:hover::after {
   display: inline-block;
 }
-
 .nav a {
   color: var(--link-primary);
   display: block;
@@ -320,8 +228,8 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 155px;
 }
 
@@ -329,8 +237,8 @@ h3 {
   background-color: var(--bgc-banner);
   color: var(--text-white);
   -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 28px 10px;
 }
 
@@ -349,14 +257,14 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .curr-feat-card {
   border: 1px solid var(--border-secondary);
   border-radius: 5px;
   -webkit-box-shadow: 1px 3px 0px 0px var(--shadow-primary);
-  box-shadow: 1px 3px 0px 0px var(--shadow-primary);
+          box-shadow: 1px 3px 0px 0px var(--shadow-primary);
   display: block;
   margin: 15px;
   padding: 5px 10px;
@@ -374,7 +282,6 @@ h3 {
 .card-logo {
   display: block;
 }
-
 .card-logo img {
   vertical-align: middle;
   max-width: 250px;
@@ -382,8 +289,8 @@ h3 {
 
 .card-description {
   -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
 }
 
 .curr-feat-card p,
@@ -395,8 +302,7 @@ h3 {
 .curr-feat-card ul {
   padding-left: 20px;
 }
-
-.curr-feat-card ul>li {
+.curr-feat-card ul > li {
   list-style-type: disc;
 }
 
@@ -404,8 +310,7 @@ h3 {
 .comparison-chart {
   padding: 25px 0px;
 }
-
-.comparison-chart>h2 {
+.comparison-chart > h2 {
   padding: 25px;
 }
 
@@ -413,15 +318,12 @@ h3 {
   margin: 0 auto;
   width: 95%;
 }
-
-.comparison>thead th {
+.comparison > thead th {
   background-color: var(--bgc-table);
   border-top: 1px solid var(--border-primary);
   text-align: left;
 }
-
-.comparison th,
-.comparison td {
+.comparison th, .comparison td {
   border-bottom: 1px solid var(--border-primary);
   padding: 10px;
 }
@@ -436,8 +338,7 @@ h3 {
   background-image: linear-gradient(#00644b, #009771);
   padding: 15px;
 }
-
-.contact-us>h2 {
+.contact-us > h2 {
   color: var(--text-white);
   line-height: 1.6;
   padding: 20px 0;
@@ -452,10 +353,10 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .form-group {
@@ -465,41 +366,36 @@ h3 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
-
-.form-group>input,
-.form-group>textarea,
+.form-group > input,
+.form-group > textarea,
 .form-group label {
   text-align: left;
   width: 100%;
 }
-
-.form-group>input,
-.form-group>label {
+.form-group > input,
+.form-group > label {
   border-radius: 2px;
   margin: 5px 0px 0px 5px;
 }
-
-.form-group>label {
+.form-group > label {
   color: var(--text-white);
   font-size: 16px;
   font-weight: 700;
 }
-
-.form-group>input {
+.form-group > input {
   border: none;
   font-size: 14px;
   margin: 10px 0;
   padding: 6px;
   outline: 1px solid var(--border-white);
 }
-
-.form-group>textarea {
+.form-group > textarea {
   border-radius: 5px;
   height: 150px;
   resize: none;
@@ -515,7 +411,6 @@ h3 {
   padding: 8px 20px;
   width: 100px;
 }
-
 .submit:hover {
   background-color: var(--bgc-white);
   color: var(--text-primary);
@@ -527,11 +422,11 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   line-height: 1.6;
   padding: 30px 20px;
 }
@@ -544,7 +439,6 @@ h3 {
   color: var(--link-contact);
   position: relative;
 }
-
 .contact-hexschool a:hover::after {
   content: "";
   position: absolute;
@@ -561,20 +455,20 @@ h3 {
 @media screen and (min-width: 30.625em) {
   .header {
     -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 
   .nav ul {
     -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 
   .nav ul li {
     -webkit-box-flex: 0;
-    -ms-flex-positive: 0;
-    flex-grow: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
   }
 
   .curr-feat-card {
@@ -582,8 +476,8 @@ h3 {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .card-logo {
@@ -591,18 +485,18 @@ h3 {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 250px;
   }
 
   .card-description {
     -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
   }
 
   .card-description h3 {
@@ -611,7 +505,7 @@ h3 {
 
   .client-info {
     -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
 
   .form-group {
@@ -622,27 +516,25 @@ h3 {
     height: 100%;
   }
 }
-
 @media screen and (min-width: 40em) {
   .footer {
     -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 
   .hexschool-footer-logo {
     display: block;
   }
 }
-
 @media screen and (min-width: 48em) {
   .social-media-wrap {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: end;
+        -ms-flex-pack: end;
+            justify-content: end;
   }
 
   .banner {
@@ -659,7 +551,7 @@ h3 {
 
   .curr-feat {
     -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
 
   .curr-feat-card {
