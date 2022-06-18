@@ -12,14 +12,14 @@
 
 
 .contact-hexschool a {
-  color: #e55995;
+  color: var(--link-contact);
   position: relative;
 
 
   &:hover::after {
     content: "";
     position: absolute;
-    background-color: rgba(229, 89, 149, 0.2);
+    background-color: var(--bgc-contact);
     bottom: 0;
     left: 0;
     right: 0;

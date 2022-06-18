@@ -1,9 +1,12 @@
-@use "../base/typography" as font;
+@forward "../abstracts";
+@use "../abstracts/fonts" as font;
+
 /* base styles */
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+  // outline: 1px solid lightgreen;
 }
 
 body {

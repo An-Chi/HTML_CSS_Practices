@@ -4,18 +4,16 @@
 }
 
 
-
 .curr-feat {
   display: flex;
   flex-wrap: wrap;
 }
 
 
-
 .curr-feat-card {
-  border: 1px solid #f3f3f3;
+  border: 1px solid var(--border-secondary);
   border-radius: 5px;
-  box-shadow: 1px 3px 0px 0px rgba(119, 117, 117, 0.2);
+  box-shadow: 1px 3px 0px 0px var(--shadow-primary);
   display: block;
   margin: 15px;
   padding: 5px 10px;
@@ -37,10 +35,10 @@
 .card-logo {
   display: block;
 
-  //使用flex + max-width
+  //使用 max-width
   img {
     vertical-align: middle;
-
+    max-width: 250px;
   }
 }
 

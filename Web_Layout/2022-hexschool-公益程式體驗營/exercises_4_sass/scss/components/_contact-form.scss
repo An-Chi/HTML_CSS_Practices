@@ -4,7 +4,7 @@
   padding: 15px;
 
   >h2 {
-    color: #fff;
+    color: var(--text-white);
     line-height: 1.6;
     padding: 20px 0;
   }
@@ -43,7 +43,7 @@
   }
 
   >label {
-    color: #fff;
+    color: var(--text-white);
     font-size: 16px;
     font-weight: 700;
   }
@@ -53,7 +53,7 @@
     font-size: 14px;
     margin: 10px 0;
     padding: 6px;
-    outline: 1px solid #fff;
+    outline: 1px solid var(--border-white);
   }
 
   >textarea {
@@ -65,17 +65,17 @@
 }
 
 .submit {
-  background-color: #01cc99;
+  background-color: var(--bgc-primary);
   border: none;
   border-radius: 3px;
-  color: #fff;
+  color: var(--text-white);
   margin: 10px 3px 0 0;
   padding: 8px 20px;
   width: 100px;
 
   &:hover {
-    background-color: #fff;
-    color: #01cc99;
+    background-color: var(--bgc-white);
+    color: var(--text-primary);
     cursor: pointer;
   }
 }

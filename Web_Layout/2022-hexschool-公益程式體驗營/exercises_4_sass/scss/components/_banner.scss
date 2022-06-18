@@ -10,8 +10,8 @@
 }
 
 .slogan-wrap {
-  background-color: rgba(1, 4, 10, 0.3);
-  color: #fff;
+  background-color: var(--bgc-banner);
+  color: var(--text-white);
   flex-grow: 1;
   padding: 28px 10px;
 }

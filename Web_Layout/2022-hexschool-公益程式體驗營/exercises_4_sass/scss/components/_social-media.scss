@@ -1,3 +1,11 @@
+/* SNS Link */
+.social-media-wrap {
+  background-color: var(--bgc-sns);
+  display: none;
+  padding-right: 10px;
+}
+
+
 .social-media {
   display: flex;
   font-size: 16px;
@@ -8,17 +16,17 @@
     text-align: center;
 
     &:hover {
-      box-shadow: 1px 3px 0px 0px rgba(119, 117, 117, 0.2);
+      box-shadow: 1px 3px 0px 0px var(--shadow-primary);
     }
 
     &:first-of-type {
-      border-right: 1px solid #d3d3d3;
+      border-right: 1px solid var(--border-primary);
 
     }
   }
 
   a {
-    color: #4460a0;
+    color: var(--link-sns);
     padding: 0 10px;
   }
 

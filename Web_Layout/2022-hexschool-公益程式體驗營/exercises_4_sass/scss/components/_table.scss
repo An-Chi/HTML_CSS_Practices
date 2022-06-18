@@ -13,18 +13,18 @@
   margin: 0 auto;
   width: 95%;
   >thead th {
-    background-color: #f7f7f7;
-    border-top: 1px solid lightgray;
+    background-color: var(--bgc-table);
+    border-top: 1px solid var(--border-primary);
     text-align: left;
   }
 
   th, td {
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid var(--border-primary);
     padding: 10px;
   }
 
 }
 
 .highlight {
-  color: #26ad88;
+  color: var(--text-primary);
 }

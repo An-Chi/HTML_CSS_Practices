@@ -1,21 +1,20 @@
 :root {
-  --background-color: #01cc99;
-  --text-color: #01cc99;
-  --link-color: rgba(229, 89, 149, 0.2);
-  
+  --bgc-primary: #01cc99;
+  --bgc-banner: rgba(1, 4, 10, 0.3);
+  --bgc-contact: rgba(229, 89, 149, 0.2);
+  --bgc-white: #fff;
+  --bgc-table: #f7f7f7;
+  --bgc-sns: #f6f6f6;
+  --border-primary: #d3d3d3;
+  --border-secondary: #f3f3f3;
+  --border-white: #fff;
+  --btn-primary: #01cc99;
+  --btn-secondary: #fff;
+  --link-primary: #01cc99;
+  --link-sns: #4460a0;
+  --link-contact: #e55995;
+  --shadow-primary: rgba(119, 117, 117, 0.2);
+  --text-primary: #01cc99;
+  --text-white: #fff;
+  --text-body: #000;
 }
-
-$text-primary: #01cc99;
-$text-secondary: #4460a0;
-$text-success: #26ad88;
-$text-white: #fff;
-$text-body: #000;
-
-
-
-$bg-primary: #01cc99;
-$bg-secondary: #f6f6f6;
-$bg-dark: rgba(1, 4, 10, 0.3);
-$bg-grey: #f7f7f7;
-$bg-white: #fff;
-$bg-warning: rgba(229, 89, 149, 0.2);

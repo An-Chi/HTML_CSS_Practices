@@ -1,3 +1,10 @@
+.header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .nav {
   flex-grow: 1;
   margin-right: 5px;
@@ -17,7 +24,7 @@
     position: relative;
 
     &::after {
-      background-color: #01cc99;
+      background-color: var(--bgc-primary);
       content: "";
       display: none;
       position: absolute;
@@ -35,7 +42,7 @@
   }
 
   a {
-    color: #01cc99;
+    color: var(--link-primary);
     display: block;
     padding: 20px 10px;
   }

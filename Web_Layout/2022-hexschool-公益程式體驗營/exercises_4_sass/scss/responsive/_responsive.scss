@@ -1,0 +1,100 @@
+@use "../abstracts" as abstracts;
+/*test*/
+// 490
+@include abstracts.breakpoint(small){
+  .header {
+    justify-content: space-between;
+  }
+
+  .nav ul {
+    justify-content: flex-end;
+  }
+
+  .nav ul li {
+    flex-grow: 0;
+  }
+
+  .curr-feat-card {
+    display: flex;
+    align-items: center;
+  }
+
+  .card-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+  }
+
+  .card-description {
+    flex-grow: 1;
+  }
+
+  .card-description h3 {
+    text-align: left;
+  }
+
+  .client-info {
+    flex-wrap: nowrap;
+  }
+
+  .form-group {
+    width: 48%;
+  }
+
+  .form-group textarea {
+    height: 100%;
+  }
+}
+
+
+@include abstracts.breakpoint(medium){
+  .footer {
+    justify-content: space-between;
+  }
+
+  .hexschool-footer-logo {
+    display: block;
+  }
+
+}
+
+
+@include abstracts.breakpoint(large){
+  .social-media-wrap {
+    display: flex;
+    justify-content: end;
+  }
+
+  .banner {
+    height: 345px;
+  }
+
+  .slogan {
+    font-size: 36px;
+  }
+
+  .curriculum-feature {
+    padding-top: 50px;
+  }
+
+  .curr-feat {
+    flex-wrap: nowrap;
+  }
+
+  .curr-feat-card {
+    display: block;
+  }
+
+  .card-description h3 {
+    text-align: center;
+  }
+
+  .card-logo {
+    width: 100%;
+  }
+
+  .card-logo img {
+    max-width: 100%;
+  }
+}
